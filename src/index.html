@@ -5,15 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gloton - Home</title>
   </head>
-  <body class="font-montserrat h-screen">
-    <header class="bg-white">
-      <nav>
+  <body class="font-montserrat flex flex-col min-h-screen">
+    <header class="fixed top-0 w-full bg-white border-b-2 border-b-red">
+      <nav class="relative flex justify-between items-center py-7 w-full px-3.5" id="navbarHeader">
         <div>
-          <img src="" alt="">
+          <a href=""><img src="./assets/logo-yeli-burger.webp" alt="logo-yeli-burger"></a>
+        </div>
+        <div class="absolute top-0 right-auto min-w-72 md:w-80 bg-white min-h-screen z-50 opacity-0">
+          <div class="flex justify-between items-center py-7 pl-3.5 md:hidden">
+            <a href=""><img src="./assets/logo-yeli-burger.webp" alt="logo-yeli-burger"></a>
+            <button class="pr-3.5" id="navbarHeader_btn_close">
+              <i class="fa-solid fa-xmark text-3xl"></i>
+            </button>
+          </div>
+          <ul class="pt-3.5 px-3.5">
+            <li class="py-3.5"><a class="font-semibold hover:text-red" href="">MENU</a></li>
+            <li class="py-3.5"><a class="font-semibold hover:text-red" href="#">ABOUT US</a></li>
+            <li class="py-3.5"><a class="font-semibold hover:text-red" href="#">OUR SERVICES</a></li>
+            <li class="md:hidden"><button class="mt-7 py-6 px-12 font-semibold bg-red rounded-xl transform duration-300 hover:bg-black text-white  ">ORDER NOW</button></li>
+          </ul>
+        </div>
+        <div class="flex gap-9">
+          <button class="" id="">
+            <i class="fa-solid fa-cart-shopping text-red text-2xl"></i>
+          </button>
+          <button class="lg:hidden" id="navbarHeader_btn_open">
+            <i class="fa-solid fa-bars text-2xl"></i>
+          </button>
+          <button class="py-6 px-12 font-semibold hidden lg:block bg-red rounded-xl transform duration-300 hover:bg-black text-white  ">ORDER NOW</button>
         </div>
       </nav>
     </header>
-    <main></main>
-    <footer></footer>
+    <main class="flex-1">Main</main>
+    <footer>Footer</footer>
+    <!-- srcip para icons -->
+    <script src="https://kit.fontawesome.com/3e852469a1.js" crossorigin="anonymous"></script>
   </body>
 </html>
