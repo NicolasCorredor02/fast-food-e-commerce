@@ -10,8 +10,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
-  //mode
-  mode: "development",
+
   //entry point
   entry: "./src/js/script.js",
   //module point
@@ -23,8 +22,17 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/',
+              useRelativePath: true,
+            },
+          },
+        ],
       },
     ],
   },
@@ -37,6 +45,15 @@ module.exports = {
     // Plugin HTML
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+      minify:{
+          collapseWhitespace: true,
+          keepClosingSlash: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true
+      }
     }),
     // Plugin CSS
     new MiniCssExtractPlugin({
