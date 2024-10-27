@@ -5,87 +5,207 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gloton - Home</title>
   </head>
-  <body class="font-montserrat flex flex-col min-h-screen">
-    <header class="sticky top-0 w-full py-7 bg-white border-b-2 border-b-red">
-      <nav class="flex justify-between flex-1 items-center px-3.5 mx-auto lg:px-24" id="navbarHeader">
-        <div>
-          <a href=""><img src="./assets/logo-yeli-burger.webp" alt="logo-yeli-burger"></a>
-        </div>
-        <div class="absolute top-0 left-0 lg:static min-w-72 md:w-80 lg:w-auto bg-white min-h-screen lg:min-h-full hidden lg:block">
-          <div class="flex justify-between items-center py-7 pl-3.5 lg:hidden">
-            <a href=""><img src="./assets/logo-yeli-burger.webp" alt="logo-yeli-burger"></a>
-            <button class="pr-3.5" id="navbarHeader_btn_close">
-              <i class="fa-solid fa-xmark text-3xl"></i>
+  <body>
+    <div class="font-montserrat flex flex-col min-h-screen">
+      <header class="sticky top-0 w-full max-h-[105px] py-4 bg-white border-b-2 border-b-red z-40">
+        <nav class="flex justify-between flex-1 items-center m-auto w-11/12 lg:w-10/12 2xl:w-8/12">
+          <div>
+            <a href="./index.html"><img src="./assets/logo-yeli-burger.webp" alt="logo-yeli-burger"></a>
+          </div>
+          <div id="navbarMenu" class="absolute top-0 left-0 lg:static min-w-72 md:w-80 lg:w-auto bg-white min-h-screen lg:min-h-full lg:block transform -translate-x-full transition-transform duration-300 ease-in-out lg:transform-none">
+            <div class="flex justify-between items-center py-7 pl-3.5 lg:hidden">
+              <a href=""><img src="./assets/logo-yeli-burger.webp" alt="logo-yeli-burger"></a>
+              <button class="pr-3.5" id="navbarCloseMenu">
+                <i class="fa-solid fa-xmark text-3xl"></i>
+              </button>
+            </div>
+            <ul class="pt-3.5 px-3.5 w-auto lg:flex lg:pt-0 lg:px-0 lg:flex-1">
+              <li class="py-3.5 px-3.5"><a class="font-semibold transform duration-300 hover:text-red" href="#">MENU</a></li>
+              <li class="py-3.5 px-3.5"><a class="font-semibold transform duration-300 hover:text-red" href="#">NUESTROS SERVICIOS</a></li>
+              <li class="py-3.5 px-3.5"><a class="font-semibold transform duration-300 hover:text-red" href="#">SOBRE NOSOTROS</a></li>
+              <li class="lg:hidden"><button class="mt-7 py-6 px-10 font-semibold bg-red rounded-xl transform duration-300 hover:bg-black text-white  ">ORDERNAR AHORA</button></li>
+            </ul>
+          </div>
+          <div class="flex gap-9">
+            <button class="" id="">
+              <i class="fa-solid fa-cart-shopping text-red text-2xl transform duration-300 hover:text-black"></i>
             </button>
+            <button class="lg:hidden" id="navbarOpenMenu">
+              <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+            <button class="font-semibold hidden lg:block lg:py-3 lg:px-6 bg-red rounded-xl transform duration-300 hover:bg-black text-white  ">ORDENAR AHORA</button>
           </div>
-          <ul class="pt-3.5 px-3.5 w-auto lg:flex lg:pt-0 lg:px-0 lg:flex-1">
-            <li class="py-3.5 px-3.5"><a class="font-semibold hover:text-red" href="">MENU</a></li>
-            <li class="py-3.5 px-3.5"><a class="font-semibold hover:text-red" href="#">ABOUT US</a></li>
-            <li class="py-3.5 px-3.5"><a class="font-semibold hover:text-red" href="#">OUR SERVICES</a></li>
-            <li class="lg:hidden"><button class="mt-7 py-6 px-12 font-semibold bg-red rounded-xl transform duration-300 hover:bg-black text-white  ">ORDER NOW</button></li>
-          </ul>
-        </div>
-        <div class="flex gap-9">
-          <button class="" id="">
-            <i class="fa-solid fa-cart-shopping text-red text-2xl"></i>
-          </button>
-          <button class="lg:hidden" id="navbarHeader_btn_open">
-            <i class="fa-solid fa-bars text-2xl"></i>
-          </button>
-          <button class="py-6 px-12 font-semibold hidden lg:block bg-red rounded-xl transform duration-300 hover:bg-black text-white  ">ORDER NOW</button>
-        </div>
-      </nav>
-    </header>
-    <main class="flex-1">Main</main>
-    <footer class="py-14 bg-black">
-      <div class="flex flex-col items-center mx-auto px-3.5">
-        <div class="grid grid-cols-1 grid-rows-[200px, 200px, 200px] lg:grid-cols-4 gap-x-[55px]  border-b border-b-white w-full pb-12">
-          <div class="flex flex-col pb-10 items-center lg:col-span-1">
-            <div><img src="./assets/logo-yeli-burger.webp" alt="logo-yeli-burger"></div>
-            <div class="flex my-7 gap-10">
-              <i class="fa-brands fa-facebook text-2xl text-orange"></i>
-              <i class="fa-brands fa-twitter text-2xl text-orange"></i>
-              <i class="fa-brands fa-threads text-2xl text-orange"></i>
-              <i class="fa-brands fa-instagram text-2xl text-orange"></i>
+          <!-- Cart overlay  -->
+          <div id="" class="fixed inset-0 bg-dark-black bg-opacity-70 z-50">
+            <!-- pop up del carrito de compras -->
+             <div class="fixed w-full h-full md:w-[480px] md:h-auto md:min-h-[400px] md:rounded-lg md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 z-50 overflow-y-auto grid grid-rows-general-layout bg-white">
+              <div class="flex justify-between items-center px-6 py-4 border-b-2 border-b-grey-dark">
+                <h2 class="font-extrabold text-2xl">Tu carrito</h2>
+                <button id="" class="">
+                  <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+              </div>
+              <div class="px-6 py-3 border-b-2 border-b-grey-dark">
+                <!-- TODO: LLENAR DE FORMA DINAMICA CON LOS PRODUCTOS -->
+              </div>
+              <div class="flex flex-col px-6 py-4">
+                <div class="flex justify-between mb-4">
+                  <p class="text-xl font-bold">Sub total</p>
+                  <p class="text-xl font-bold text-orange">$----</p>
+                </div>
+                <button class="bg-red text-xl rounded-xl transform duration-300 hover:bg-black text-white font-bold py-6 px-8">CONTINUAR</button>
+              </div>
+             </div>
+          </div>
+        </nav>
+      </header>
+      <main class="flex-1 h-full">
+        <section class="flex justify-center items-center min-h-[641px] w-full lg:h-svh relative">
+          <img class="object-cover h-full w-full absolute -z-10" src="./assets/hamburger-banner.webp" alt="Hamburger banner home">
+          <div class="flex flex-col items-center text-center xl:items-start xl:text-start w-11/12 lg:w-10/12 2xl:w-8/12 gap-9">
+            <div class="">
+                <h1 class="text-6xl xl:text-8xl text-white font-extrabold">CARNE DE RES <strong class="text-orange">100%</strong> ARTESANAL</h1>          
+            </div>
+            <div class="">
+              <p class="text-white font-medium">El pan más sabroso, los ingredientes más frescos y nuestra carne artesanal jugosa son la combinación ideal para cualquier hora del día.</p>
+            </div>
+            <div class="flex gap-6">
+              <button class="py-4 px-6 font-semibold bg-red rounded-xl transform duration-300 hover:bg-black text-white text-base ">ORDENAR AHORA</button>
+              <button class="py-4 px-6 font-semibold text-white bg-transparent border rounded-xl transform duration-300 hover:bg-red hover:border-red text-base">VER TODAS</button>
             </div>
           </div>
-          <div class="flex justify-around mb-10 lg:col-span-2">
-            <div class="flex flex-col items-center md:items-start">
-              <h4 class="pb-2.5 text-white font-bold text-2xl border-b border-b-red">Contact Info</h4>
-              <a class="mt-5 py-2.5 text-white" href="">(+57) 3115465899</a>
-              <a class="py-2.5 text-white" href="">(+57) 3104657799</a>
+        </section>
+        <section class="flex h-full flex-col gap-12 py-14 items-center text-center mx-auto w-11/12 lg:w-10/12 2xl:w-8/12">
+          <div class="flex flex-col gap-12">
+            <h2 class="text-3xl font-extrabold text-black">Hamburguesas populares</h2>
+            <p class="text-black font-medium">Inspirado en las recetas y creaciones de los mejores chefs del mundo</p>
+          </div>
+          <div class="w-full h-full grid grid-cols-auto-fit-populars auto-rows-auto gap-7">
+            <div class="flex w-auto h-auto flex-col gap-7">
+              <div class="flex flex-col pt-12 px-5 pb-2.5 border-2 rounded-xl border-grey-dark">
+                <img class="m-auto W-72 h-52" src="./assets/burger-doble-carne.webp" alt="hamburguesa doble carne">
+                <div class="w-40  py-4 px-5 bg-orange rounded-xl">
+                  <p class="text-base font-semibold">$ 22.000</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-5">
+                <h3 class="text-black font-extrabold text-2xl">Hamburgues doble carne</h3>
+                <p class="text-black">300 gr de carne artesanal para los insaciables</p>
+              </div>
+              <div class="">
+                <button class="bg-red text-white font-semibold py-3.5 px-4 rounded-xl">AÑADIR AL CARRITO <i class="ml-3 fa-solid fa-cart-shopping text-white text-base"></i></button>
+              </div>
             </div>
-            <div class="flex flex-col items-center md:items-start">
-              <h4 class="pb-2.5 text-white font-bold text-2xl border-b border-b-red">Opening Hour</h4>
-              <h6 class="mt-5 text-white">Monday - Saturday</h6>
-              <p class="py-2.5 text-orange">8 AM - 5 PM</p>
-              <h6 class="text-white">Sunday</h6>
-              <p class="py-2.5 text-orange">12 AM - 8 PM</p>
+            <div class="flex w-auto h-auto flex-col gap-7">
+              <div class="flex flex-col pt-12 px-5 pb-2.5 border-2 rounded-xl border-grey-dark">
+                <img class="m-auto W-72 h-52" src="./assets/burger-doble-carne.webp" alt="hamburguesa doble carne">
+                <div class="w-40  py-4 px-5 bg-orange rounded-xl">
+                  <p class="text-base font-semibold">$ 22.000</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-5">
+                <h3 class="text-black font-extrabold text-2xl">Hamburgues doble carne</h3>
+                <p class="text-black">300 gr de carne artesanal para los insaciables</p>
+              </div>
+              <div class="">
+                <button class="bg-red text-white font-semibold py-3.5 px-4 rounded-xl">AÑADIR AL CARRITO <i class="ml-3 fa-solid fa-cart-shopping text-white text-base"></i></button>
+              </div>
+            </div>
+            <div class="flex w-auto h-auto flex-col gap-7">
+              <div class="flex flex-col pt-12 px-5 pb-2.5 border-2 rounded-xl border-grey-dark">
+                <img class="m-auto W-72 h-52" src="./assets/burger-doble-carne.webp" alt="hamburguesa doble carne">
+                <div class="w-40  py-4 px-5 bg-orange rounded-xl">
+                  <p class="text-base font-semibold">$ 22.000</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-5">
+                <h3 class="text-black font-extrabold text-2xl">Hamburgues doble carne</h3>
+                <p class="text-black">300 gr de carne artesanal para los insaciables</p>
+              </div>
+              <div class="">
+                <button class="bg-red text-white font-semibold py-3.5 px-4 rounded-xl">AÑADIR AL CARRITO <i class="ml-3 fa-solid fa-cart-shopping text-white text-base"></i></button>
+              </div>
+            </div>
+            <div class="flex w-auto h-auto flex-col gap-7">
+              <div class="flex flex-col pt-12 px-5 pb-2.5 border-2 rounded-xl border-grey-dark">
+                <img class="m-auto W-72 h-52" src="./assets/burger-doble-carne.webp" alt="hamburguesa doble carne">
+                <div class="w-40  py-4 px-5 bg-orange rounded-xl">
+                  <p class="text-base font-semibold">$ 22.000</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-5">
+                <h3 class="text-black font-extrabold text-2xl">Hamburgues doble carne</h3>
+                <p class="text-black">300 gr de carne artesanal para los insaciables</p>
+              </div>
+              <div class="">
+                <button class="bg-red text-white font-semibold py-3.5 px-4 rounded-xl">AÑADIR AL CARRITO <i class="ml-3 fa-solid fa-cart-shopping text-white text-base"></i></button>
+              </div>
             </div>
           </div>
-          <div class="flex flex-col items-center lg:col-span-1">
-            <h4 class="text-white text-2xl font-bold">Suscribe to newsletters</h4>
-            <form action="" method="" class="flex items-end pt-3.5">
-              <input class="border-b border-b-white py-2.5" type="email" placeholder="Email">
-              <button type="submit" class="border-b border-b-white text-orange font-semibold text-xl h-full">Suscribe</button>
-            </form>
+        </section>
+        <section class="h-[500px] md:h-[650px] w-full bg-orange pt-[60px] md:pt-[80px] overflow-hidden">
+          <div class="flex flex-col items-center text-center mx-auto h-full w-11/12 lg:w-10/12 2xl:w-8/12">
+            <h3 class="text-white text-4xl lg:text-6xl font-extrabold">PRUEBA NUESTRAS DELICIOSAS HAMBURGUESAS</h3>
+            <div class="flex justify-center items-center relative">
+              <img class="mx-a mt-16 lg:mt-16 " src="./assets/banner-view-menu.webp" alt="Banner view all menu">
+              <a class="absolute top-1/2" href=""><button class=" py-4 px-10 font-semibold bg-black rounded-xl transform duration-300 hover:bg-white hover:text-black text-white text-base ">VER MENU</button></a>
+            </div>
+          </div>
+          
+        </section>
+      </main>
+      <footer class="py-14 bg-black">
+        <div class="flex flex-col items-center mx-auto w-11/12 lg:w-10/12 2xl:w-8/12">
+          <div class="grid grid-cols-1 grid-rows-[200px, 200px, 200px] lg:grid-cols-5 lg:gap-x-[20px] xl:gap-x-[55px]  border-b border-b-white w-full pb-12">
+            <div class="flex flex-col pb-10 items-center col-span-1">
+              <div><img src="./assets/logo-yeli-burger.webp" alt="logo-yeli-burger"></div>
+              <div class="flex my-7 gap-10">
+                <i class="fa-brands fa-facebook text-2xl text-orange transform duration-300 hover:text-red"></i>
+                <i class="fa-brands fa-twitter text-2xl text-orange transform duration-300 hover:text-red"></i>
+                <i class="fa-brands fa-threads text-2xl text-orange transform duration-300 hover:text-red"></i>
+                <i class="fa-brands fa-instagram text-2xl text-orange transform duration-300 hover:text-red"></i>
+              </div>
+            </div>
+            <div class="flex justify-around mb-10 col-span-2">
+              <div class="flex flex-col items-center md:items-start">
+                <h4 class="pb-2.5 text-white font-bold text-2xl border-b border-b-red">Contact Info</h4>
+                <a class="mt-5 py-2.5 text-white " href="">(+57) 3115465899</a>
+                <a class="py-2.5 text-white " href="">(+57) 3104657799</a>
+              </div>
+              <div class="flex flex-col items-center md:items-start">
+                <h4 class="pb-2.5 text-white font-bold text-2xl border-b border-b-red">Opening Hour</h4>
+                <h6 class="mt-5 text-white">Monday - Saturday</h6>
+                <p class="py-2.5 text-orange">8 AM - 5 PM</p>
+                <h6 class="text-white">Sunday</h6>
+                <p class="py-2.5 text-orange">12 AM - 8 PM</p>
+              </div>
+            </div>
+            <div class="flex flex-col items-center col-span-2">
+              <h4 class="text-white text-2xl font-bold">Suscribe to newsletters</h4>
+              <form action="" method="" class="flex items-end pt-3.5">
+                <input class="border-b border-b-white py-2.5" type="email" placeholder="Email">
+                <button type="submit" class="border-b border-b-white text-orange font-semibold text-xl h-full">Suscribe</button>
+              </form>
+            </div>
+          </div>
+          <div class="grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 mt-10 w-full gap-y-10">
+            <div class="flex w-10/12 justify-between place-self-center">
+              <a class="text-white font-semibold transform duration-300 hover:text-orange" href="#">HOME</a>
+              <a class="text-white font-semibold transform duration-300 hover:text-orange" href="#">MENU</a>
+              <a class="text-white font-semibold transform duration-300 hover:text-orange" href="#">ABOUT US</a>
+              <a class="text-white font-semibold transform duration-300 hover:text-orange" href="#">OUR SERVICES</a>
+            </div>
+            <div class="flex place-self-center">
+              <p class="text-white">©️ Yeli Burger. All Rights Reserved 2024. </p>
+              <a class="text-orange" href=""> Licensing</a>
+            </div>
           </div>
         </div>
-        <div class="grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 mt-10 w-full gap-y-10">
-          <div class="flex w-10/12 justify-between place-self-center">
-            <a class="text-white font-semibold" href="#">HOME</a>
-            <a class="text-white font-semibold" href="#">MENU</a>
-            <a class="text-white font-semibold" href="#">ABOUT US</a>
-            <a class="text-white font-semibold" href="#">OUR SERVICES</a>
-          </div>
-          <div class="flex place-self-center">
-            <p class="text-white">©️ Yeli Burger. All Rights Reserved 2024. </p>
-            <a class="text-orange" href=""> Licensing</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
     <!-- srcip para icons -->
     <script src="https://kit.fontawesome.com/3e852469a1.js" crossorigin="anonymous"></script>
+    <!-- script principal de modulos para funcionalidades -->
+    <script src="./js/script.js" type="module"></script>
   </body>
 </html>
