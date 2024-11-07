@@ -2,140 +2,140 @@
     {
       "id": "1",
       "name": "Hamburguesa Clasica",
-      "price": "18.000",
+      "price": "18000",
       "description": "Una jugosa hamburguesa de ternera con lechuga, tomate y nuestra salsa especial.",
       "type":"hamburger"
     },
     {
       "id": "2",
       "name": "Hamburguesa con queso",
-      "price": "21.000",
+      "price": "21000",
       "description": "Una hamburguesa clásica cubierta de queso fundido.",
       "type":"hamburger"
     },
     {
       "id": "3",
       "name": "Hamburguesa de bacon",
-      "price": "24.000",
+      "price": "24000",
       "description": "Una hamburguesa de ternera con bacon crujiente, lechuga y tomate.",
       "type":"hamburger"
     },
     {
       "id": "4",
       "name": "Hamburguesa BBQ",
-      "price": "24.000",
+      "price": "24000",
       "description": "Una hamburguesa con salsa barbacoa, aros de cebolla y queso cheddar.",
       "type":"hamburger"
     },
     {
       "id": "5",
       "name": "Hamburguesa suiza con champiñones",
-      "price": "28.000",
+      "price": "28000",
       "description": "Una hamburguesa de ternera con champiñones salteados y queso suizo.",
       "type":"hamburger"
     },
     {
       "id": "6",
       "name": "Hamburguesa Mexicana",
-      "price": "30.000",
+      "price": "30000",
       "description": "Una hamburguesa con jalapeños, queso pepper jack y mayonesa picante.",
       "type":"hamburger"
     },
     {
       "id": "7",
       "name": "Hamburguesa vegetariana",
-      "price": "25.000",
+      "price": "25000",
       "description": "Una hamburguesa vegetal con todos los ingredientes clásicos.",
       "type":"hamburger"
     },
     {
       "id": "8",
       "name": "Nachos",
-      "price": "14.000",
+      "price": "14000",
       "description": "Chips de tortilla cubiertos con queso fundido, jalapeños y salsa.",
       "type":"nachos"
     },
     {
       "id": "9",
       "name": "Nachos cargados",
-      "price": "18.000",
+      "price": "18000",
       "description": "Nachos con queso, guacamole, crema agria y carne a elegir.",
       "type":"nachos"
     },
     {
       "id": "10",
       "name": "Nachos con pollo",
-      "price": "18.000",
+      "price": "18000",
       "description": "Nachos con pollo búfalo, queso y aderezo ranchero.",
       "type":"nachos"
     },
     {
       "id": "11",
       "name": "Wrap de pollo",
-      "price": "15.000",
+      "price": "15000",
       "description": "Un wrap relleno de pollo a la parrilla, lechuga y aderezo ranchero.",
       "type":"wraps"
     },
     {
       "id": "12",
       "name": "Wrap Caesar",
-      "price": "17.000",
+      "price": "17000",
       "description": "Un wrap con lechuga romana, aderezo César y la proteína de su elección.",
       "type":"wraps"
     },
     {
       "id": "13",
       "name": "Wrap con pollo buffalo",
-      "price": "19.000",
+      "price": "19000",
       "description": "Un wrap con pollo buffalo, lechuga y aderezo de queso azul.",
       "type":"wraps"
     },
     {
       "id": "14",
       "name": "Wrap vegetariano",
-      "price": "15.000",
+      "price": "15000",
       "description": "Un wrap relleno de verduras frescas y hummus.",
       "type":"wraps"
     },
     {
       "id": "15",
       "name": "Malteada de chocolate",
-      "price": "14.000",
+      "price": "14000",
       "description": "Una cremosa malteada hecha con helado de chocolate y coronada con crema chantilly.",
       "type":"milkshakes"
     },
     {
       "id": "16",
       "name": "Malteada de vainilla",
-      "price": "14.000",
+      "price": "14000",
       "description": "Malteada clasica hecha con helado de vainilla.",
       "type":"milkshakes"
     },
     {
       "id": "17",
       "name": "Malteada de fresa",
-      "price": "14.000",
+      "price": "14000",
       "description": "Malteada hecha con fresas frescas y helado de vainilla",
       "type":"milkshakes"
     },
     {
       "id": "18",
       "name": "Malteada de oreo",
-      "price": "16.000",
+      "price": "16000",
       "description": "Malteada con trozos de oreo, helado de vainilla y crema chatilly.",
       "type":"milkshakes"
     },
     {
       "id": "19",
       "name": "Buffalo Wings",
-      "price": "13.000",
+      "price": "13000",
       "description": "Alitas de pollo bañadas en salsa búfalo picante.",
       "type":"wings"
     },
     {
       "id": "20",
       "name": "Alitas BBQ",
-      "price": "15.000",
+      "price": "15000",
       "description": "Alitas bañadas en salsa BBQ y asadas a la perfección.",
       "type":"wings"
     }

@@ -1,4 +1,4 @@
-export const CartCard = ({product}) =>{
+export const CartCard = (product) =>{
     return `
     <div class="py-3 grid grid-cols-general-layout w-full">
         <div class="">

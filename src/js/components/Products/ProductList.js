@@ -44,6 +44,9 @@ export class ProductList {
 
         // 5. Se ejecutan las funciones importadas para agregar al carrito
         addToShoppingCart(getItemById(productId));
+
+        // 6. Se recarga la pagina
+        location.reload()
       }
     });
   }
@@ -56,7 +59,7 @@ export class ProductList {
    */
   render() {
     this.containerId.innerHTML = this.productsList
-      .map((product) => ProductCard({ product }))
+      .map((product) => ProductCard(product))
       .join("");
   }
 }

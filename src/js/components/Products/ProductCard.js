@@ -3,7 +3,7 @@
  * @param {object} param0 // Este recibe el objeto de menu para renderizar la card que se mostrara en el DOM
  * @returns
  */
-export const ProductCard = ({ product }) => {
+export const ProductCard = (product) => {
   return `
     <div class="flex w-auto h-auto max-h-400px flex-col gap-7">
         <div class="flex flex-col pt-12 px-5 pb-2.5 border-2 rounded-xl border-grey-dark">

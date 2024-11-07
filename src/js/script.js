@@ -21,9 +21,10 @@ import {ShoppingCart} from "./utils/shoppingCart"
 //* =============== Import de components ============
 // component para la muestra del menu de alimentos
 import { ProductList } from "./components/Products/ProductList"
-// component para la muestra del carrito de compra
+// component para la muestra del carrito de compras y sus funcionalidades
 import { CartList } from "./components/ShoppingCart/CartList"
-
+// component para la muestra de los datos en cantidad de items del carrito y muestra del subtotal del carrito
+import { CartData } from "./components/ShoppingCart/CartData"
 
 /**
  * * Se usa DOMContentLoaded sobre todo el documento para evitar problemas en sobre la interaccion del JS con el HTML,
@@ -47,11 +48,25 @@ document.addEventListener('DOMContentLoaded', () => {
      */  
     const productList = new ProductList('productsContainer', 'hamburger')
 
+
     /**
      * Se intancia un nuevo objeto de tipo CartList para mostrar
      * aquellos items que han sido agregados al carrito de compras del localStorage
      * y se renderizan sobre el contenedor 'cartContainer'
+     * 
+     * El primer parametro corresponde al contenedor donde se renderizan los items del carrito
+     * El segundo parametro corresponde al boton que simula la continuacion del la compra
      */  
-    const cartList = new CartList('cartContainer')
+    const cartList = new CartList('cartContainerList', 'cartButtonContinue')
+
+    /**
+     * Se instancia nuevo obj de tipo de CartData
+     * para mostrar el conteo de items del carrito
+     * y mostrar el subtotal de los items del carrito
+     * 
+     * parametro1 =  id de etiqueta para mostrar conteo
+     * parametro2 = id de etiqueta para mostrar subtotal
+     */
+    const cartData = new CartData('amountCart', 'cartSubTotal')
 
 })
