@@ -2,11 +2,8 @@
 import "../css/styles.css"
 
 // * Import de los assets para el proyecto
-import "../assets/logo-yeli-burger.webp"
 import "../assets/hamburger-banner.webp"
-import "../assets/burger-doble-carne.webp"
-import "../assets/banner-view-menu.webp"
-
+import "../assets/banner-menu.webp"
 
 // * ============== Import de Services =========
 // Service para inicializar el carrito de compras

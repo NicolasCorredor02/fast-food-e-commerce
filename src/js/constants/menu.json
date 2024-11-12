@@ -1,6 +1,7 @@
 [
     {
       "id": "1",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Hamburguesa Clasica",
       "price": "18000",
       "description": "Una jugosa hamburguesa de ternera con lechuga, tomate y nuestra salsa especial.",
@@ -8,6 +9,7 @@
     },
     {
       "id": "2",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Hamburguesa con queso",
       "price": "21000",
       "description": "Una hamburguesa clásica cubierta de queso fundido.",
@@ -15,6 +17,7 @@
     },
     {
       "id": "3",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Hamburguesa de bacon",
       "price": "24000",
       "description": "Una hamburguesa de ternera con bacon crujiente, lechuga y tomate.",
@@ -22,6 +25,7 @@
     },
     {
       "id": "4",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Hamburguesa BBQ",
       "price": "24000",
       "description": "Una hamburguesa con salsa barbacoa, aros de cebolla y queso cheddar.",
@@ -29,6 +33,7 @@
     },
     {
       "id": "5",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Hamburguesa suiza con champiñones",
       "price": "28000",
       "description": "Una hamburguesa de ternera con champiñones salteados y queso suizo.",
@@ -36,6 +41,7 @@
     },
     {
       "id": "6",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Hamburguesa Mexicana",
       "price": "30000",
       "description": "Una hamburguesa con jalapeños, queso pepper jack y mayonesa picante.",
@@ -43,6 +49,7 @@
     },
     {
       "id": "7",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Hamburguesa vegetariana",
       "price": "25000",
       "description": "Una hamburguesa vegetal con todos los ingredientes clásicos.",
@@ -50,6 +57,7 @@
     },
     {
       "id": "8",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Nachos",
       "price": "14000",
       "description": "Chips de tortilla cubiertos con queso fundido, jalapeños y salsa.",
@@ -57,6 +65,7 @@
     },
     {
       "id": "9",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Nachos cargados",
       "price": "18000",
       "description": "Nachos con queso, guacamole, crema agria y carne a elegir.",
@@ -64,6 +73,7 @@
     },
     {
       "id": "10",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Nachos con pollo",
       "price": "18000",
       "description": "Nachos con pollo búfalo, queso y aderezo ranchero.",
@@ -71,6 +81,7 @@
     },
     {
       "id": "11",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Wrap de pollo",
       "price": "15000",
       "description": "Un wrap relleno de pollo a la parrilla, lechuga y aderezo ranchero.",
@@ -78,6 +89,7 @@
     },
     {
       "id": "12",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Wrap Caesar",
       "price": "17000",
       "description": "Un wrap con lechuga romana, aderezo César y la proteína de su elección.",
@@ -85,6 +97,7 @@
     },
     {
       "id": "13",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Wrap con pollo buffalo",
       "price": "19000",
       "description": "Un wrap con pollo buffalo, lechuga y aderezo de queso azul.",
@@ -92,6 +105,7 @@
     },
     {
       "id": "14",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Wrap vegetariano",
       "price": "15000",
       "description": "Un wrap relleno de verduras frescas y hummus.",
@@ -99,6 +113,7 @@
     },
     {
       "id": "15",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Malteada de chocolate",
       "price": "14000",
       "description": "Una cremosa malteada hecha con helado de chocolate y coronada con crema chantilly.",
@@ -106,6 +121,7 @@
     },
     {
       "id": "16",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Malteada de vainilla",
       "price": "14000",
       "description": "Malteada clasica hecha con helado de vainilla.",
@@ -113,6 +129,7 @@
     },
     {
       "id": "17",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Malteada de fresa",
       "price": "14000",
       "description": "Malteada hecha con fresas frescas y helado de vainilla",
@@ -120,6 +137,7 @@
     },
     {
       "id": "18",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Malteada de oreo",
       "price": "16000",
       "description": "Malteada con trozos de oreo, helado de vainilla y crema chatilly.",
@@ -127,6 +145,7 @@
     },
     {
       "id": "19",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Buffalo Wings",
       "price": "13000",
       "description": "Alitas de pollo bañadas en salsa búfalo picante.",
@@ -134,6 +153,7 @@
     },
     {
       "id": "20",
+      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
       "name": "Alitas BBQ",
       "price": "15000",
       "description": "Alitas bañadas en salsa BBQ y asadas a la perfección.",

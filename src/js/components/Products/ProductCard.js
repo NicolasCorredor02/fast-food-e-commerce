@@ -7,7 +7,7 @@ export const ProductCard = (product) => {
   return `
     <div class="flex w-auto h-auto max-h-400px flex-col gap-7">
         <div class="flex flex-col pt-12 px-5 pb-2.5 border-2 rounded-xl border-grey-dark">
-            <img class="m-auto W-72 h-52" src="./assets/burger-doble-carne.webp" alt="${product.name}">
+            <img class="m-auto W-72 h-52" src="${product.img}" alt="${product.name}">
             <div class="w-40  py-4 px-5 bg-orange rounded-xl">
               <p class="text-base font-semibold">$ ${product.price}</p>
             </div>

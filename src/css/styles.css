@@ -582,6 +582,10 @@ video {
   left: 0px;
 }
 
+.right-0{
+  right: 0px;
+}
+
 .top-0{
   top: 0px;
 }
@@ -590,20 +594,56 @@ video {
   top: 50%;
 }
 
-.right-0{
-  right: 0px;
+.left-10{
+  left: 2.5rem;
+}
+
+.top-10{
+  top: 2.5rem;
+}
+
+.left-1\/2{
+  left: 50%;
+}
+
+.right-auto{
+  right: auto;
+}
+
+.top-1\/4{
+  top: 25%;
 }
 
 .bottom-1\/2{
   bottom: 50%;
 }
 
+.bottom-1\/4{
+  bottom: 25%;
+}
+
+.right-1\/2{
+  right: 50%;
+}
+
 .left-auto{
   left: auto;
 }
 
-.bottom-auto{
-  bottom: auto;
+.right-1\/4{
+  right: 25%;
+}
+
+.left-1\/4{
+  left: 25%;
+}
+
+.left-full{
+  left: 100%;
+}
+
+.right-full{
+  right: 100%;
 }
 
 .-z-10{
@@ -684,8 +724,16 @@ video {
   height: 13rem;
 }
 
+.h-\[22\.5px\]{
+  height: 22.5px;
+}
+
 .h-\[500px\]{
   height: 500px;
+}
+
+.h-\[50px\]{
+  height: 50px;
 }
 
 .h-auto{
@@ -696,28 +744,39 @@ video {
   height: 100%;
 }
 
-.h-\[50px\]{
-  height: 50px;
+.h-fit{
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
-.h-\[20px\]{
-  height: 20px;
+.h-min{
+  height: -moz-min-content;
+  height: min-content;
 }
 
-.h-\[30px\]{
-  height: 30px;
+.h-max{
+  height: -moz-max-content;
+  height: max-content;
 }
 
-.h-\[25px\]{
-  height: 25px;
+.h-screen{
+  height: 100vh;
 }
 
-.h-\[22\.5px\]{
-  height: 22.5px;
+.h-\[85vh\]{
+  height: 85vh;
+}
+
+.h-\[50vh\]{
+  height: 50vh;
 }
 
 .max-h-\[105px\]{
   max-height: 105px;
+}
+
+.min-h-\[500px\]{
+  min-height: 500px;
 }
 
 .min-h-\[641px\]{
@@ -740,6 +799,10 @@ video {
   width: 10rem;
 }
 
+.w-\[22\.5px\]{
+  width: 22.5px;
+}
+
 .w-\[80px\]{
   width: 80px;
 }
@@ -750,30 +813,6 @@ video {
 
 .w-full{
   width: 100%;
-}
-
-.w-\[50px\]{
-  width: 50px;
-}
-
-.w-\[70px\]{
-  width: 70px;
-}
-
-.w-\[20px\]{
-  width: 20px;
-}
-
-.w-\[30px\]{
-  width: 30px;
-}
-
-.w-\[25px\]{
-  width: 25px;
-}
-
-.w-\[22\.5px\]{
-  width: 22.5px;
 }
 
 .min-w-72{
@@ -889,6 +928,10 @@ video {
   overflow-y: auto;
 }
 
+.rounded-full{
+  border-radius: 9999px;
+}
+
 .rounded-lg{
   border-radius: 0.5rem;
 }
@@ -897,22 +940,8 @@ video {
   border-radius: 0.75rem;
 }
 
-.rounded-full{
-  border-radius: 9999px;
-}
-
-.rounded-3xl{
-  border-radius: 1.5rem;
-}
-
-.rounded-s-full{
-  border-start-start-radius: 9999px;
-  border-end-start-radius: 9999px;
-}
-
-.rounded-e-full{
-  border-start-end-radius: 9999px;
-  border-end-end-radius: 9999px;
+.rounded{
+  border-radius: 0.25rem;
 }
 
 .border{
@@ -929,6 +958,10 @@ video {
 
 .border-b-2{
   border-bottom-width: 2px;
+}
+
+.border-b-4{
+  border-bottom-width: 4px;
 }
 
 .border-grey-dark{
@@ -984,21 +1017,21 @@ video {
   --tw-bg-opacity: 0.7;
 }
 
+.bg-opacity-50{
+  --tw-bg-opacity: 0.5;
+}
+
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.p-3{
-  padding: 0.75rem;
-}
-
-.p-1{
-  padding: 0.25rem;
-}
-
 .p-\[2px\]{
   padding: 2px;
+}
+
+.p-4{
+  padding: 1rem;
 }
 
 .px-10{
@@ -1146,14 +1179,19 @@ video {
   line-height: 1.75rem;
 }
 
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.text-sm{
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.text-5xl{
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .font-bold{
@@ -1263,12 +1301,40 @@ video {
     top: 50%;
   }
 
+  .md\:top-1\/4{
+    top: 25%;
+  }
+
   .md\:h-\[650px\]{
     height: 650px;
   }
 
   .md\:h-auto{
     height: auto;
+  }
+
+  .md\:h-\[83vh\]{
+    height: 83vh;
+  }
+
+  .md\:h-\[70vh\]{
+    height: 70vh;
+  }
+
+  .md\:h-\[80vh\]{
+    height: 80vh;
+  }
+
+  .md\:h-\[90vh\]{
+    height: 90vh;
+  }
+
+  .md\:h-\[85vh\]{
+    height: 85vh;
+  }
+
+  .md\:h-\[60vh\]{
+    height: 60vh;
   }
 
   .md\:max-h-screen{
@@ -1335,8 +1401,50 @@ video {
     height: 100svh;
   }
 
+  .lg\:h-auto{
+    height: auto;
+  }
+
+  .lg\:h-96{
+    height: 24rem;
+  }
+
+  .lg\:h-4\/5{
+    height: 80%;
+  }
+
+  .lg\:h-5\/6{
+    height: 83.333333%;
+  }
+
+  .lg\:h-\[80\%\]{
+    height: 80%;
+  }
+
+  .lg\:h-\[\]{
+    height: ;
+  }
+
+  .lg\:h-\[500px\]{
+    height: 500px;
+  }
+
   .lg\:min-h-full{
     min-height: 100%;
+  }
+
+  .lg\:min-h-max{
+    min-height: -moz-max-content;
+    min-height: max-content;
+  }
+
+  .lg\:min-h-fit{
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+  }
+
+  .lg\:min-h-96{
+    min-height: 24rem;
   }
 
   .lg\:w-10\/12{

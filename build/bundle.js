@@ -41,16 +41,153 @@
 /******/ 	
 /************************************************************************/
 
-;// ./src/assets/logo-yeli-burger.webp
-/* harmony default export */ const logo_yeli_burger = (__webpack_require__.p + "assets/logo-yeli-burger.webp");
-;// ./src/assets/cart-icon.svg
-/* harmony default export */ const cart_icon = (__webpack_require__.p + "assets/cart-icon.svg");
 ;// ./src/assets/hamburger-banner.webp
 /* harmony default export */ const hamburger_banner = (__webpack_require__.p + "assets/hamburger-banner.webp");
-;// ./src/assets/burger-doble-carne.webp
-/* harmony default export */ const burger_doble_carne = (__webpack_require__.p + "assets/burger-doble-carne.webp");
-;// ./src/assets/banner-view-menu.webp
-/* harmony default export */ const banner_view_menu = (__webpack_require__.p + "assets/banner-view-menu.webp");
+;// ./src/assets/banner-menu.webp
+/* harmony default export */ const banner_menu = (__webpack_require__.p + "assets/banner-menu.webp");
+;// ./src/js/constants/config.js
+/**
+ * * Archivo que almacena las constantes generales para el proyecto
+ */
+
+// Array carrito que almacena el carrito en el localStorage
+const SHOPPING_CART = []
+// Clave del carrito en el localStorage
+const SHOPPING_CART_KEY = 'shoppingCart'
+;// ./src/js/services/shoppingCart.js
+//* Se importa las constantes globales del carrito de compras
+
+
+
+/**
+ * Funcion para inicializar el carrito de compras en caso de que no se encuentre creado
+ */
+const initShoppingCart = () =>{
+    if (!localStorage.getItem(SHOPPING_CART_KEY)) {
+        localStorage.setItem(SHOPPING_CART_KEY, JSON.stringify(SHOPPING_CART))
+    }
+} 
+
+/**
+ * 
+ * @returns {Array} // Array de objetos en el carrito de compras
+ */
+const getShoppingCart = () =>{
+    return JSON.parse(localStorage.getItem(SHOPPING_CART_KEY))
+}
+
+
+/**
+ * 
+ * @returns {Array} // Array de objetos que cuentan con minimo una unidad
+ */
+const getShoppingCartByAmount = () =>{
+    const cartByAmount = JSON.parse(localStorage.getItem(SHOPPING_CART_KEY)).filter((object) => object.amount >= 1)
+
+    return cartByAmount
+}
+
+/**
+ * 
+ * @param {object} param // Objeto de para ser añadido en el carrito de compras 
+ */
+const addToShoppingCart = (object) =>{
+    
+    const currentCart = getShoppingCart();
+
+    if (currentCart.some((item) => item.id === object.id)) {
+        /**
+         * Actualizar la cantidad del alimento en el carrito
+         * 1. Se busca el indice del objeto que se quiere agregar al carrito, ya que, existe
+         * 2. Se actualiza la cantidad en una unidad de este objeto del carrito
+         * 3. Finalmente se actualiza el carrito del localStorage
+        */
+       const index = currentCart.findIndex((element) => element.id === object.id)
+       currentCart[index].amount++
+       localStorage.setItem(SHOPPING_CART_KEY, JSON.stringify(currentCart))
+    } else {
+        object.amount = 1
+        currentCart.push(object)
+        localStorage.setItem(SHOPPING_CART_KEY, JSON.stringify(currentCart))
+    }
+}
+
+/**
+ * 
+ * @param {number} id // id del objeto del cual se quiere aumentar la cantidad en una unidad 
+ */
+const sumAmountCart = (id) => {
+    const currentCart = getShoppingCart()
+
+    if (currentCart.some((item) => item.id === id)) {
+        /**
+         * Actualizar la cantidad del alimento en el carrito
+         * 1. Se busca el indice del objeto que se quiere remover del carrito, ya que, existe
+         * 2. Se actualiza la cantidad en una unidad de este objeto del carrito
+         * 3. Finalmente se actualiza el carrito del localStorage
+        */
+       const index = currentCart.findIndex((element) => element.id === id)
+       currentCart[index].amount++       
+       localStorage.setItem(SHOPPING_CART_KEY, JSON.stringify(currentCart))
+    } else {
+        console.log('Error al aumentar cantidad del elemento en el carrito!');
+    }
+}
+
+/**
+ * 
+ * @param {number} param0 //id del objeto del cual se quiere disminuir la cantidad en una unidad
+ */
+const reduceAmountCart = (id) =>{
+    const currentCart = getShoppingCart()
+
+    if (currentCart.some((item) => item.id === id)) {
+        /**
+         * Actualizar la cantidad del alimento en el carrito
+         * 1. Se busca el indice del objeto que se quiere remover del carrito, ya que, existe
+         * 2. Se actualiza la cantidad en una unidad de este objeto del carrito
+         * 3. Finalmente se actualiza el carrito del localStorage
+        */
+       const index = currentCart.findIndex((element) => element.id === id)
+       currentCart[index].amount--
+       localStorage.setItem(SHOPPING_CART_KEY, JSON.stringify(currentCart))
+    } else {
+        console.log('Error al disminuir cantidad del elemento en el carrito!');
+    }
+}
+
+/**
+ * 
+ * @param {number} idItem // Se ingresa el id del objeto que se quiere eliminar el carrito de compras
+ */
+const removeFromShoppingCart = (idItem) => {
+    const currentCart = getShoppingCart()
+    const updateCart = currentCart.filter((object) => object.id !== idItem)
+    localStorage.setItem(SHOPPING_CART_KEY, JSON.stringify(updateCart))
+}
+
+
+/**
+ * 
+ * @param {Array} shoppingCart //Ingresa el array de objetos del carrito
+ * @returns {number} // Regresa el valor del total de items del carrito por medio de la propiedad amount
+ */
+const cartCount = (shoppingCart) => shoppingCart.reduce((accumulador, element) => accumulador + element.amount, 0)
+
+/**
+ * 
+ * @param {array} shoppingCart // Ingresa el array de objetos del carrito para calcular el subtotal
+ * @returns {number} // regresa el valor final de la sumatoria sobre los items del carrito
+ */
+const cartSubTotal = (shoppingCart) => shoppingCart.reduce((accumulador, element) => accumulador + (element.price * element.amount), 0)
+
+/**
+ * Funcion para limpiar el carrito de compras
+ */
+const clearShoppingCart = () => {
+    localStorage.setItem(SHOPPING_CART_KEY, JSON.stringify([]))
+}
+
 ;// ./src/js/utils/navbarShow.js
 class NavbarMenu{
     constructor(){
@@ -113,17 +250,16 @@ class ShoppingCart{
     }
 }
 ;// ./src/js/components/Products/ProductCard.js
-
 /**
- * 
- * @param {object} param0 // Este recibe el objeto de menu para renderizar la card que se mostrara en el DOM 
- * @returns 
+ *
+ * @param {object} param0 // Este recibe el objeto de menu para renderizar la card que se mostrara en el DOM
+ * @returns
  */
-const ProductCard = ({product}) => {
+const ProductCard = (product) => {
   return `
     <div class="flex w-auto h-auto max-h-400px flex-col gap-7">
         <div class="flex flex-col pt-12 px-5 pb-2.5 border-2 rounded-xl border-grey-dark">
-            <img class="m-auto W-72 h-52" src="./assets/burger-doble-carne.webp" alt="${product.name}">
+            <img class="m-auto W-72 h-52" src="${product.img}" alt="${product.name}">
             <div class="w-40  py-4 px-5 bg-orange rounded-xl">
               <p class="text-base font-semibold">$ ${product.price}</p>
             </div>
@@ -140,7 +276,7 @@ const ProductCard = ({product}) => {
 };
 
 ;// ./src/js/constants/menu.json
-const menu_namespaceObject = /*#__PURE__*/JSON.parse('[{"id":"1","name":"Hamburguesa Clasica","price":"18.000","description":"Una jugosa hamburguesa de ternera con lechuga, tomate y nuestra salsa especial.","type":"hamburger"},{"id":"2","name":"Hamburguesa con queso","price":"21.000","description":"Una hamburguesa clásica cubierta de queso fundido.","type":"hamburger"},{"id":"3","name":"Hamburguesa de bacon","price":"24.000","description":"Una hamburguesa de ternera con bacon crujiente, lechuga y tomate.","type":"hamburger"},{"id":"4","name":"Hamburguesa BBQ","price":"24.000","description":"Una hamburguesa con salsa barbacoa, aros de cebolla y queso cheddar.","type":"hamburger"},{"id":"5","name":"Hamburguesa suiza con champiñones","price":"28.000","description":"Una hamburguesa de ternera con champiñones salteados y queso suizo.","type":"hamburger"},{"id":"6","name":"Hamburguesa Mexicana","price":"30.000","description":"Una hamburguesa con jalapeños, queso pepper jack y mayonesa picante.","type":"hamburger"},{"id":"7","name":"Hamburguesa vegetariana","price":"25.000","description":"Una hamburguesa vegetal con todos los ingredientes clásicos.","type":"hamburger"},{"id":"8","name":"Nachos","price":"14.000","description":"Chips de tortilla cubiertos con queso fundido, jalapeños y salsa.","type":"nachos"},{"id":"9","name":"Nachos cargados","price":"18.000","description":"Nachos con queso, guacamole, crema agria y carne a elegir.","type":"nachos"},{"id":"10","name":"Nachos con pollo","price":"18.000","description":"Nachos con pollo búfalo, queso y aderezo ranchero.","type":"nachos"},{"id":"11","name":"Wrap de pollo","price":"15.000","description":"Un wrap relleno de pollo a la parrilla, lechuga y aderezo ranchero.","type":"wraps"},{"id":"12","name":"Wrap Caesar","price":"17.000","description":"Un wrap con lechuga romana, aderezo César y la proteína de su elección.","type":"wraps"},{"id":"13","name":"Wrap con pollo buffalo","price":"19.000","description":"Un wrap con pollo buffalo, lechuga y aderezo de queso azul.","type":"wraps"},{"id":"14","name":"Wrap vegetariano","price":"15.000","description":"Un wrap relleno de verduras frescas y hummus.","type":"wraps"},{"id":"15","name":"Malteada de chocolate","price":"14.000","description":"Una cremosa malteada hecha con helado de chocolate y coronada con crema chantilly.","type":"milkshakes"},{"id":"16","name":"Malteada de vainilla","price":"14.000","description":"Malteada clasica hecha con helado de vainilla.","type":"milkshakes"},{"id":"17","name":"Malteada de fresa","price":"14.000","description":"Malteada hecha con fresas frescas y helado de vainilla","type":"milkshakes"},{"id":"18","name":"Malteada de oreo","price":"16.000","description":"Malteada con trozos de oreo, helado de vainilla y crema chatilly.","type":"milkshakes"},{"id":"19","name":"Buffalo Wings","price":"13.000","description":"Alitas de pollo bañadas en salsa búfalo picante.","type":"wings"},{"id":"20","name":"Alitas BBQ","price":"15.000","description":"Alitas bañadas en salsa BBQ y asadas a la perfección.","type":"wings"}]');
+const menu_namespaceObject = /*#__PURE__*/JSON.parse('[{"id":"1","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa Clasica","price":"18000","description":"Una jugosa hamburguesa de ternera con lechuga, tomate y nuestra salsa especial.","type":"hamburger"},{"id":"2","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa con queso","price":"21000","description":"Una hamburguesa clásica cubierta de queso fundido.","type":"hamburger"},{"id":"3","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa de bacon","price":"24000","description":"Una hamburguesa de ternera con bacon crujiente, lechuga y tomate.","type":"hamburger"},{"id":"4","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa BBQ","price":"24000","description":"Una hamburguesa con salsa barbacoa, aros de cebolla y queso cheddar.","type":"hamburger"},{"id":"5","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa suiza con champiñones","price":"28000","description":"Una hamburguesa de ternera con champiñones salteados y queso suizo.","type":"hamburger"},{"id":"6","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa Mexicana","price":"30000","description":"Una hamburguesa con jalapeños, queso pepper jack y mayonesa picante.","type":"hamburger"},{"id":"7","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa vegetariana","price":"25000","description":"Una hamburguesa vegetal con todos los ingredientes clásicos.","type":"hamburger"},{"id":"8","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Nachos","price":"14000","description":"Chips de tortilla cubiertos con queso fundido, jalapeños y salsa.","type":"nachos"},{"id":"9","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Nachos cargados","price":"18000","description":"Nachos con queso, guacamole, crema agria y carne a elegir.","type":"nachos"},{"id":"10","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Nachos con pollo","price":"18000","description":"Nachos con pollo búfalo, queso y aderezo ranchero.","type":"nachos"},{"id":"11","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Wrap de pollo","price":"15000","description":"Un wrap relleno de pollo a la parrilla, lechuga y aderezo ranchero.","type":"wraps"},{"id":"12","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Wrap Caesar","price":"17000","description":"Un wrap con lechuga romana, aderezo César y la proteína de su elección.","type":"wraps"},{"id":"13","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Wrap con pollo buffalo","price":"19000","description":"Un wrap con pollo buffalo, lechuga y aderezo de queso azul.","type":"wraps"},{"id":"14","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Wrap vegetariano","price":"15000","description":"Un wrap relleno de verduras frescas y hummus.","type":"wraps"},{"id":"15","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Malteada de chocolate","price":"14000","description":"Una cremosa malteada hecha con helado de chocolate y coronada con crema chantilly.","type":"milkshakes"},{"id":"16","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Malteada de vainilla","price":"14000","description":"Malteada clasica hecha con helado de vainilla.","type":"milkshakes"},{"id":"17","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Malteada de fresa","price":"14000","description":"Malteada hecha con fresas frescas y helado de vainilla","type":"milkshakes"},{"id":"18","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Malteada de oreo","price":"16000","description":"Malteada con trozos de oreo, helado de vainilla y crema chatilly.","type":"milkshakes"},{"id":"19","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Buffalo Wings","price":"13000","description":"Alitas de pollo bañadas en salsa búfalo picante.","type":"wings"},{"id":"20","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Alitas BBQ","price":"15000","description":"Alitas bañadas en salsa BBQ y asadas a la perfección.","type":"wings"}]');
 ;// ./src/js/services/menuServices.js
 // * Se importa el archivo JSON (local) que contiene el menu a mostrar
 
@@ -168,61 +304,259 @@ const getMenuByType = (tipo = 'all') =>{
 
 /**
  * 
- * @param {number} id // Se recibe el id del elemento que se quiere encontrar sobre el menu 
- * @returns // Regresa el array con el objeto del id buscado
+ * @param {string} id // Se recibe el id del elemento que se quiere encontrar sobre el menu 
+ * @returns // Regresa el objeto del id buscado
  */
-const getMenuById = (id) =>{
-
-    try {
-        const menuElement =  menuData.filter((obj) => obj.id === id)
-        return menuElement
+const getItemById = (id) =>{    
+    try {    
+        const element =  menu_namespaceObject.find((obj) => obj.id === id)      
+        return element
     } catch (error) {
-        console.error('Error al encontrar elemento: ', error);
-        return []
+        console.error('Error al encontrar el elemento: ', error);
     }
     
 }
 ;// ./src/js/components/Products/ProductList.js
- //* Impor del render del card para cada producto
- //* Impor de la funcion para obtener los items del menu.json
+ // Import del template o componente del card para cada producto
+ // Import de la funcion para obtener los items del menu.json
+ //Import de la funcion para obtener el objeto enterio del menu stock
+ //Import de la funcion para agregar el objeto al carrito del localStorage
 
-class ProductList{
-    /**
-     * 
-     * @param {string} cotainerId //Ingresar el id del contenedor donde se renderizaran las cards de los items 
-     */
-    constructor(cotainerId, type){
-        this.cotainerId = document.getElementById(cotainerId)
-        this.productsList = []
+class ProductList {
+  /**
+   *
+   * @param {string} cotainerId //Ingresar el id del contenedor donde se renderizaran las cards de los items
+   */
+  constructor(containerId, type) {
+    this.containerId = document.getElementById(containerId);
+    this.productsList = [];
 
-        this.init(type)
+    this.setupEventListener()
+    this.init(type);
+    
+  }
+
+  init(type) {
+    try {
+      this.productsList = getMenuByType(type);
+      this.render();
+    } catch (error) {
+      console.error("Error al cargar elementos en el DOM: ", error);
+      this.containerId.innerHTML = "Error al cargar elementos...";
+    }
+  }
+
+  setupEventListener() {
+    // 1. Se agrega el eventListener al contenedor donde se renderiza
+    this.containerId.addEventListener("click", (e) => {
+
+      // 2. Se busca si el click fue en un botón o dentro de él, busca aquellos botones que tengan agregar al incio en su id
+      const button = e.target.closest('[id^="agregar"]');
+
+      // 3. Si existe la interaccion con un botón, se ejecuta el if
+      if (button) {
+        /**
+         *  4. Se extrae el Id del producto a traves del Id original del boton,
+         *  esto remplaza la palabra "agregar" por '' quedando solo el id
+        */  
+        const productId = button.id.replace("agregar", "")
+
+        // 5. Se ejecutan las funciones importadas para agregar al carrito
+        addToShoppingCart(getItemById(productId));
+
+        // 6. Se recarga la pagina
+        location.reload()
+      }
+    });
+  }
+
+  /**
+   * contenedor.innerHTML = nuevo array .map
+   * ---> cada product toma la funcion ProductCard({product})
+   * ---> .join para separar o concatenar todo el contenido del nuevo array ''
+   * ---> al final todo es ingresao al contenedorId por medio del innerHTML
+   */
+  render() {
+    this.containerId.innerHTML = this.productsList
+      .map((product) => ProductCard(product))
+      .join("");
+  }
+}
+
+;// ./src/js/components/ShoppingCart/CartCard.js
+const CartCard = (product) =>{
+    return `
+    <div class="py-3 grid grid-cols-general-layout w-full">
+        <div class="">
+            <img class="w-[80px]" src="${product.img}" alt="${product.name}">
+        </div>
+        <div class="flex flex-col gap-2 justify-between items-start">
+            <div>
+                <h3 class="text-lg font-bold">${product.name}</h3>
+                <h3 class="text-lg font-normal">$${product.price}</h4>
+            </div>
+            <button id="remover${product.id}" class="bg-red px-2 py-1 text-white rounded-lg">Remover</button>
+        </div>
+        <div class="flex justify-between items-center gap-5">
+            <button id="disminuir${product.id}" class="text-base"><i class="fa-solid fa-minus"></i></button>
+            <p class="text-xl">${product.amount}</p>
+            <button id="aumentar${product.id}" class="text-base"><i class="fa-solid fa-plus"></i></button>
+        </div>
+    </div>
+    `
+}
+;// ./src/js/components/ShoppingCart/CartList.js
+ //Import del componente card de cada uno de los elementos del carrito
+ //Import de la funcion para obtener todos los elementos del carrito que cuentan con una cantidad de minimo una unidad
+ //Import de la funcion para disminuir en una unidad el elemento del carrito
+ //Import de la funcion para aumentar en una unidad el elemento del carrito
+ //Import de la funcion para continuar con la compra y limpiar el carrito de compras
+ //Import de la funcion para remover un item del carrito de compras
+
+class CartList{
+    constructor(cartContainerList, cartButtonContinue){
+        this.cartContainerList = document.getElementById(cartContainerList)
+        this.cartButtonContinue = document.getElementById(cartButtonContinue)
+        this.cartList = []
+
+        this.setupEventRemoveCart()
+        this.setupEventReduceAmount()
+        this.setupEventSumAmount()
+        this.setupEventClearCart()
+        this.init()
     }
 
-    init(type){
+
+    init(){
         try {
-            this.productsList = getMenuByType(type)
+            this.cartList = getShoppingCartByAmount()
             this.render()
         } catch (error) {
-            console.error('Error al cargar elementos en el DOM: ', error);
-            this.cotainerId.innerHTML = 'Error al cargar elementos...'
-            
+            console.error('Error al cargar los elementos del carrito: ', error);
+            this.cartContainerList.innerHTML = 'Error al cargar elementos...'
         }
     }
 
     /**
-     * contenedor.innerHTML = nuevo array .map 
-     * ---> cada product toma la funcion ProductCard({product}) 
-     * ---> .join para separar o concatenar todo el contenido del nuevo array ''
-     * ---> al final todo es ingresao al contenedorId por medio del innerHTML
+     * Metodo para remover completamente un item del carrito de compras
      */
+
+    setupEventRemoveCart(){
+        this.cartContainerList.addEventListener("click", (e) =>{
+            const button = e.target.closest('[id^="remover"]')
+
+            if (button) {
+                const productId = button.id.replace("remover", "")
+                removeFromShoppingCart(productId)
+
+                location.reload()
+            }
+        })
+    }
+
+    /**
+     * Metodo para poder reducir la cantidad solicitada por el usuario del alimento
+     */
+    setupEventReduceAmount(){
+        this.cartContainerList.addEventListener("click", (e)=>{
+            const button = e.target.closest('[id^="disminuir"]')
+
+            if (button) {
+                const productId = button.id.replace("disminuir", "")
+                reduceAmountCart(productId)
+
+                location.reload()
+            }
+        })
+    }
+
+    /**
+     * Metodo para aumentar la cantidad del carrito
+     */
+    setupEventSumAmount(){
+        this.cartContainerList.addEventListener("click", (e) => {
+            const button = e.target.closest('[id^="aumentar"]')
+
+            if (button) {
+                const productId = button.id.replace("aumentar", "")
+                
+                sumAmountCart(productId)
+
+                location.reload()
+            }
+        })
+    }
+
+
+    /**
+     * Metodo para simular la compra y limpiar el carrito de compras
+     */
+    setupEventClearCart(){
+        this.cartButtonContinue.addEventListener("click", () =>{
+            clearShoppingCart()
+            location.reload()
+        })
+    }
+
+    
     render(){
-        this.cotainerId.innerHTML = this.productsList 
-        .map((product) => ProductCard({product}))
-        .join('')
+        /**
+        * contenedor.innerHTML = nuevo array .map 
+        * ---> cada product toma la funcion CartCard(product) 
+        * ---> .join para separar o concatenar todo el contenido del nuevo array ''
+         * ---> al final todo es ingresao al contenedorId por medio del innerHTML
+        */
+        if (this.cartList.length != 0) {
+            this.cartContainerList.innerHTML = this.cartList
+            .map((product) => CartCard(product))
+            .join('')
+        } else {
+            this.cartContainerList.innerHTML = '<p class="text-xl text-grey-dark text-center">No se han agregado productos al carrito!</p>'
+        }
+        
     }
 }
+;// ./src/js/components/ShoppingCart/CartData.js
+ //Import de la funcion para obtener todos los elementos del carrito que cuentan con una cantidad de minimo una unidad
+ //Import de la funcion para calcular el subtotal del carrito
+ //Import de la funcion para contar los items del carrito por su amount
+
+class CartData{
+    constructor(amountCart, cartSubTotal){
+        this.amountCart = document.getElementById(amountCart)
+        this.cartSubTotal = document.getElementById(cartSubTotal)
+        this.cartList = []
 
 
+        this.init()
+    }
+
+    init(){
+        try {
+            this.cartList = getShoppingCartByAmount()
+            this.render()
+        } catch (error) {
+            console.error('Error al cargar los elementos del carrito: ', error);
+        }
+    }
+
+    render(){
+        if (this.cartList.length != 0) {
+            /**
+             * Se toma el id de la etiqueta para mostrar la cantidad de items en el carrito
+             * Se agrega a la etiqueta el valor obtenido
+             */
+            this.amountCart.textContent = `${cartCount(this.cartList)}`
+            /**
+            * Se imprime el subtotal del carrito sobre el la etiqueta con el id ingresado
+            */
+            this.cartSubTotal.textContent = `$${cartSubTotal(this.cartList)}`            
+        } else {
+            this.amountCart.textContent = '0'
+            this.cartSubTotal.textContent = '$0'
+        }
+    }
+}
 ;// ./src/js/script.js
 // * Import del CSS para el reconocimiento de WebPack
 
@@ -231,8 +565,8 @@ class ProductList{
 
 
 
-
-
+// * ============== Import de Services =========
+// Service para inicializar el carrito de compras
 
 
 // * ============= Import de utils ==============
@@ -244,6 +578,10 @@ class ProductList{
 //* =============== Import de components ============
 // component para la muestra del menu de alimentos
 
+// component para la muestra del carrito de compras y sus funcionalidades
+
+// component para la muestra de los datos en cantidad de items del carrito y muestra del subtotal del carrito
+
 
 /**
  * * Se usa DOMContentLoaded sobre todo el documento para evitar problemas en sobre la interaccion del JS con el HTML,
@@ -251,6 +589,9 @@ class ProductList{
  */
 document.addEventListener('DOMContentLoaded', () => {
     
+    // Se ejecuta la funion initShoppingCart() para inicializar el carrito de compras en el locaStorage
+    initShoppingCart()
+
     // Se instancia un nuevo objeto de tipo NavbarMenu() para usar su clase y metodos
     const navbarMenu = new NavbarMenu();
 
@@ -263,6 +604,27 @@ document.addEventListener('DOMContentLoaded', () => {
      * y se renderizan sobre el contenedor 'productsContainer'
      */  
     const productList = new ProductList('productsContainer', 'hamburger')
+
+
+    /**
+     * Se intancia un nuevo objeto de tipo CartList para mostrar
+     * aquellos items que han sido agregados al carrito de compras del localStorage
+     * y se renderizan sobre el contenedor 'cartContainer'
+     * 
+     * El primer parametro corresponde al contenedor donde se renderizan los items del carrito
+     * El segundo parametro corresponde al boton que simula la continuacion del la compra
+     */  
+    const cartList = new CartList('cartContainerList', 'cartButtonContinue')
+
+    /**
+     * Se instancia nuevo obj de tipo de CartData
+     * para mostrar el conteo de items del carrito
+     * y mostrar el subtotal de los items del carrito
+     * 
+     * parametro1 =  id de etiqueta para mostrar conteo
+     * parametro2 = id de etiqueta para mostrar subtotal
+     */
+    const cartData = new CartData('amountCart', 'cartSubTotal')
 
 })
 /******/ })()

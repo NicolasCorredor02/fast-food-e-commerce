@@ -10,7 +10,7 @@
       <header class="sticky top-0 w-full max-h-[105px] py-4 bg-white border-b-4 border-b-red z-40">
         <nav class="flex justify-between flex-1 items-center m-auto w-11/12 lg:w-10/12 2xl:w-8/12">
           <div>
-            <a href="./index.html"><img src="https://i.ibb.co/R7QYWb8/logo-yeli-burger.webp"   alt="logo-yeli-burger"></a>
+            <a href="../index.html"><img src="https://i.ibb.co/R7QYWb8/logo-yeli-burger.webp" alt="logo-yeli-burger"></a>
           </div>
           <div id="navbarMenu" class="absolute top-0 left-0 lg:static min-w-72 md:w-80 lg:w-auto bg-white min-h-screen lg:min-h-full lg:block transform -translate-x-full transition-transform duration-300 ease-in-out lg:transform-none z-40">
             <div class="flex justify-between items-center py-7 pl-3.5 lg:hidden">
@@ -20,7 +20,7 @@
               </button>
             </div>
             <ul class="pt-3.5 px-3.5 w-auto lg:flex lg:pt-0 lg:px-0 lg:flex-1">
-              <li class="py-3.5 px-3.5"><a class="font-semibold transform duration-300 hover:text-red" href="./pages/menu.html">MENU</a></li>
+              <li class="py-3.5 px-3.5"><a class="font-semibold transform duration-300 hover:text-red" href="./menu.html">MENU</a></li>
               <li class="py-3.5 px-3.5"><a class="font-semibold transform duration-300 hover:text-red" href="#">NUESTROS SERVICIOS</a></li>
               <li class="py-3.5 px-3.5"><a class="font-semibold transform duration-300 hover:text-red" href="#">SOBRE NOSOTROS</a></li>
               <li class="lg:hidden"><button class="mt-7 py-6 px-10 font-semibold bg-red rounded-xl transform duration-300 hover:bg-black text-white  ">ORDERNAR AHORA</button></li>
@@ -34,7 +34,7 @@
             <button class="lg:hidden" id="navbarOpenMenu">
               <i class="fa-solid fa-bars text-2xl"></i>
             </button>
-            <a href="./pages/menu.html"><button class="font-semibold hidden lg:block lg:py-3 lg:px-6 bg-red rounded-xl transform duration-300 hover:bg-black text-white  ">ORDENAR AHORA</button></a>
+            <a href="./menu.html"><button class="font-semibold hidden lg:block lg:py-3 lg:px-6 bg-red rounded-xl transform duration-300 hover:bg-black text-white">ORDENAR AHORA</button></a>
           </div>
           <!-- Cart overlay  -->
           <div id="cartOverlay" class="fixed inset-0 bg-dark-black bg-opacity-70 z-50 hidden">
@@ -61,17 +61,12 @@
         </nav>
       </header>
       <main class="flex-1 h-full">
-        <section class="relative h-screen w-full overflow-hidden">
-          <img class="absolute inset-0 object-cover w-full h-full" src="./assets/hamburger-banner.webp" alt="Hamburger banner home">
-          <div class="absolute inset-0 m-auto flex flex-col justify-center items-center text-center xl:items-start xl:text-start w-11/12 lg:w-10/12 2xl:w-8/12 gap-9">
-            <h1 class="text-5xl xl:text-8xl text-white font-extrabold">CARNE DE RES <strong class="text-orange">100%</strong> ARTESANAL</h1>
-            <p class="text-white font-medium">El pan más sabroso, los ingredientes más frescos y nuestra carne artesanal jugosa son la combinación ideal para cualquier hora del día.</p>
-            <div class="flex gap-6">
-              <button class="py-4 px-6 font-semibold bg-red rounded-xl transform duration-300 hover:bg-black text-white text-base ">ORDENAR AHORA</button>
-              <a href="./pages/menu.html"><button class="py-4 px-6 font-semibold text-white bg-transparent border rounded-xl transform duration-300 hover:bg-red hover:border-red text-base">VER TODAS</button></a>
+        <section class="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
+            <img class="absolute inset-0 object-cover w-full h-full" src="../assets/banner-menu.webp" alt="Hamburger banner menu">
+            <div class="absolute inset-0 m-auto flex justify-center items-center text-center w-11/12 lg:w-10/12 2xl:w-8/12 gap-9">
+              <h1 class="text-5xl xl:text-8xl text-white font-extrabold">Menu</h1>
             </div>
-          </div>
-        </section>
+          </section>
         <section class="flex h-full flex-col gap-12 py-14 items-center text-center mx-auto w-11/12 lg:w-10/12 2xl:w-8/12">
           <div class="flex flex-col gap-12">
             <h2 class="text-3xl font-extrabold text-black">Hamburguesas populares</h2>
@@ -80,16 +75,6 @@
           <div id="productsContainer" class="w-full h-full grid grid-cols-auto-fit-populars auto-rows-auto gap-7">
             <!-- SE GENERA CON JS -->
           </div>
-        </section>
-        <section class="h-[500px] md:h-[650px] w-full bg-orange pt-[60px] md:pt-[80px] overflow-hidden">
-          <div class="flex flex-col items-center text-center mx-auto h-full w-11/12 lg:w-10/12 2xl:w-8/12">
-            <h3 class="text-white text-4xl lg:text-6xl font-extrabold">PRUEBA NUESTRAS DELICIOSAS HAMBURGUESAS</h3>
-            <div class="flex justify-center items-center relative">
-              <img class="mx-a mt-16 lg:mt-16 " src="https://i.ibb.co/Wsfm2Hk/banner-view-menu.webp" alt="Banner view all menu">
-              <a class="absolute top-1/2" href="./pages/menu.html"><button class=" py-4 px-10 font-semibold bg-black rounded-xl transform duration-300 hover:bg-white hover:text-black text-white text-base ">VER MENU</button></a>
-            </div>
-          </div>
-          
         </section>
       </main>
       <footer class="py-14 bg-black">
@@ -128,8 +113,8 @@
           </div>
           <div class="grid grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 mt-10 w-full gap-y-10">
             <div class="flex w-10/12 justify-between place-self-center">
-              <a class="text-white font-semibold transform duration-300 hover:text-orange" href="./index.html">HOME</a>
-              <a class="text-white font-semibold transform duration-300 hover:text-orange" href="./pages/menu.html">MENU</a>
+              <a class="text-white font-semibold transform duration-300 hover:text-orange" href="../index.html">HOME</a>
+              <a class="text-white font-semibold transform duration-300 hover:text-orange" href="./menu.html">MENU</a>
               <a class="text-white font-semibold transform duration-300 hover:text-orange" href="#">ABOUT US</a>
               <a class="text-white font-semibold transform duration-300 hover:text-orange" href="#">OUR SERVICES</a>
             </div>

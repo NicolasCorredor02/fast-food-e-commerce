@@ -42,9 +42,10 @@ module.exports = {
     ]
   },
   plugins: [
-    // Plugin HTML
+    // Plugin HTML index.html
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+      filename: "index.html",
       minify:{
           collapseWhitespace: true,
           keepClosingSlash: true,
@@ -53,6 +54,20 @@ module.exports = {
           removeScriptTypeAttributes: true,
           removeStyleLinkTypeAttributes: true,
           useShortDoctype: true
+      }
+    }),
+    // Plugin HTML pages/menu.html
+    new HtmlWebpackPlugin({
+      template: "./src/pages/menu.html",
+      filename: "pages/menu.html",
+      minify:{
+        collapseWhitespace: true,
+        keepClosingSlash: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
       }
     }),
     // Plugin CSS

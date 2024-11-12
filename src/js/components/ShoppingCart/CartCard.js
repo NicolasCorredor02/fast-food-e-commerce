@@ -2,7 +2,7 @@ export const CartCard = (product) =>{
     return `
     <div class="py-3 grid grid-cols-general-layout w-full">
         <div class="">
-            <img class="w-[80px]" src="./assets/burger-doble-carne.webp" alt="${product.name}">
+            <img class="w-[80px]" src="${product.img}" alt="${product.name}">
         </div>
         <div class="flex flex-col gap-2 justify-between items-start">
             <div>
