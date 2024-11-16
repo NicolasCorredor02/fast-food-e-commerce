@@ -20,11 +20,12 @@ module.exports = {
       },
       gridTemplateColumns:{
         'auto-fit-populars': 'repeat(auto-fit, minmax(278px,1fr))',
-        'auto-fit-category': 'repeat(auto-fit, minmax(150px,1fr))',
+        'auto-fit-category': 'repeat(auto-fit, minmax(100px, 1fr))',
         'general-layout': 'auto 1fr auto'
       },
       gridTemplateRows:{
-        'general-layout':'auto 1fr auto'
+        'general-layout':'auto 1fr auto',
+        'auto-fit-category':'repeat(auto-fit, minmax(100px,1fr))'
       }
     },
 

@@ -57,7 +57,7 @@
     },
     {
       "id": "8",
-      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
+      "img": "https://i.ibb.co/FwXM0xp/nachos.webp",
       "name": "Nachos",
       "price": "14000",
       "description": "Chips de tortilla cubiertos con queso fundido, jalapeños y salsa.",
@@ -65,7 +65,7 @@
     },
     {
       "id": "9",
-      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
+      "img": "https://i.ibb.co/FwXM0xp/nachos.webp",
       "name": "Nachos cargados",
       "price": "18000",
       "description": "Nachos con queso, guacamole, crema agria y carne a elegir.",
@@ -73,7 +73,7 @@
     },
     {
       "id": "10",
-      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
+      "img": "https://i.ibb.co/FwXM0xp/nachos.webp",
       "name": "Nachos con pollo",
       "price": "18000",
       "description": "Nachos con pollo búfalo, queso y aderezo ranchero.",
@@ -81,7 +81,7 @@
     },
     {
       "id": "11",
-      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
+      "img": "https://i.ibb.co/5kR53Qk/wraps.webp",
       "name": "Wrap de pollo",
       "price": "15000",
       "description": "Un wrap relleno de pollo a la parrilla, lechuga y aderezo ranchero.",
@@ -89,7 +89,7 @@
     },
     {
       "id": "12",
-      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
+      "img": "https://i.ibb.co/5kR53Qk/wraps.webp",
       "name": "Wrap Caesar",
       "price": "17000",
       "description": "Un wrap con lechuga romana, aderezo César y la proteína de su elección.",
@@ -97,7 +97,7 @@
     },
     {
       "id": "13",
-      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
+      "img": "https://i.ibb.co/5kR53Qk/wraps.webp",
       "name": "Wrap con pollo buffalo",
       "price": "19000",
       "description": "Un wrap con pollo buffalo, lechuga y aderezo de queso azul.",
@@ -105,7 +105,7 @@
     },
     {
       "id": "14",
-      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
+      "img": "https://i.ibb.co/5kR53Qk/wraps.webp",
       "name": "Wrap vegetariano",
       "price": "15000",
       "description": "Un wrap relleno de verduras frescas y hummus.",
@@ -113,7 +113,7 @@
     },
     {
       "id": "15",
-      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
+      "img": "https://i.ibb.co/QXS5bb3/milkshakes.webp",
       "name": "Malteada de chocolate",
       "price": "14000",
       "description": "Una cremosa malteada hecha con helado de chocolate y coronada con crema chantilly.",
@@ -121,7 +121,7 @@
     },
     {
       "id": "16",
-      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
+      "img": "https://i.ibb.co/QXS5bb3/milkshakes.webp",
       "name": "Malteada de vainilla",
       "price": "14000",
       "description": "Malteada clasica hecha con helado de vainilla.",
@@ -129,7 +129,7 @@
     },
     {
       "id": "17",
-      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
+      "img": "https://i.ibb.co/QXS5bb3/milkshakes.webp",
       "name": "Malteada de fresa",
       "price": "14000",
       "description": "Malteada hecha con fresas frescas y helado de vainilla",
@@ -137,7 +137,7 @@
     },
     {
       "id": "18",
-      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
+      "img": "https://i.ibb.co/QXS5bb3/milkshakes.webp",
       "name": "Malteada de oreo",
       "price": "16000",
       "description": "Malteada con trozos de oreo, helado de vainilla y crema chatilly.",
@@ -145,7 +145,7 @@
     },
     {
       "id": "19",
-      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
+      "img": "https://i.ibb.co/LSKZswS/wings.webp",
       "name": "Buffalo Wings",
       "price": "13000",
       "description": "Alitas de pollo bañadas en salsa búfalo picante.",
@@ -153,7 +153,7 @@
     },
     {
       "id": "20",
-      "img": "https://i.ibb.co/8XW7T2W/burger-doble-carne.webp",
+      "img": "https://i.ibb.co/LSKZswS/wings.webp",
       "name": "Alitas BBQ",
       "price": "15000",
       "description": "Alitas bañadas en salsa BBQ y asadas a la perfección.",

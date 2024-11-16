@@ -276,7 +276,7 @@ const ProductCard = (product) => {
 };
 
 ;// ./src/js/constants/menu.json
-const menu_namespaceObject = /*#__PURE__*/JSON.parse('[{"id":"1","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa Clasica","price":"18000","description":"Una jugosa hamburguesa de ternera con lechuga, tomate y nuestra salsa especial.","type":"hamburger"},{"id":"2","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa con queso","price":"21000","description":"Una hamburguesa clásica cubierta de queso fundido.","type":"hamburger"},{"id":"3","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa de bacon","price":"24000","description":"Una hamburguesa de ternera con bacon crujiente, lechuga y tomate.","type":"hamburger"},{"id":"4","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa BBQ","price":"24000","description":"Una hamburguesa con salsa barbacoa, aros de cebolla y queso cheddar.","type":"hamburger"},{"id":"5","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa suiza con champiñones","price":"28000","description":"Una hamburguesa de ternera con champiñones salteados y queso suizo.","type":"hamburger"},{"id":"6","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa Mexicana","price":"30000","description":"Una hamburguesa con jalapeños, queso pepper jack y mayonesa picante.","type":"hamburger"},{"id":"7","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa vegetariana","price":"25000","description":"Una hamburguesa vegetal con todos los ingredientes clásicos.","type":"hamburger"},{"id":"8","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Nachos","price":"14000","description":"Chips de tortilla cubiertos con queso fundido, jalapeños y salsa.","type":"nachos"},{"id":"9","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Nachos cargados","price":"18000","description":"Nachos con queso, guacamole, crema agria y carne a elegir.","type":"nachos"},{"id":"10","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Nachos con pollo","price":"18000","description":"Nachos con pollo búfalo, queso y aderezo ranchero.","type":"nachos"},{"id":"11","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Wrap de pollo","price":"15000","description":"Un wrap relleno de pollo a la parrilla, lechuga y aderezo ranchero.","type":"wraps"},{"id":"12","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Wrap Caesar","price":"17000","description":"Un wrap con lechuga romana, aderezo César y la proteína de su elección.","type":"wraps"},{"id":"13","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Wrap con pollo buffalo","price":"19000","description":"Un wrap con pollo buffalo, lechuga y aderezo de queso azul.","type":"wraps"},{"id":"14","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Wrap vegetariano","price":"15000","description":"Un wrap relleno de verduras frescas y hummus.","type":"wraps"},{"id":"15","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Malteada de chocolate","price":"14000","description":"Una cremosa malteada hecha con helado de chocolate y coronada con crema chantilly.","type":"milkshakes"},{"id":"16","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Malteada de vainilla","price":"14000","description":"Malteada clasica hecha con helado de vainilla.","type":"milkshakes"},{"id":"17","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Malteada de fresa","price":"14000","description":"Malteada hecha con fresas frescas y helado de vainilla","type":"milkshakes"},{"id":"18","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Malteada de oreo","price":"16000","description":"Malteada con trozos de oreo, helado de vainilla y crema chatilly.","type":"milkshakes"},{"id":"19","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Buffalo Wings","price":"13000","description":"Alitas de pollo bañadas en salsa búfalo picante.","type":"wings"},{"id":"20","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Alitas BBQ","price":"15000","description":"Alitas bañadas en salsa BBQ y asadas a la perfección.","type":"wings"}]');
+const menu_namespaceObject = /*#__PURE__*/JSON.parse('[{"id":"1","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa Clasica","price":"18000","description":"Una jugosa hamburguesa de ternera con lechuga, tomate y nuestra salsa especial.","type":"hamburger"},{"id":"2","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa con queso","price":"21000","description":"Una hamburguesa clásica cubierta de queso fundido.","type":"hamburger"},{"id":"3","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa de bacon","price":"24000","description":"Una hamburguesa de ternera con bacon crujiente, lechuga y tomate.","type":"hamburger"},{"id":"4","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa BBQ","price":"24000","description":"Una hamburguesa con salsa barbacoa, aros de cebolla y queso cheddar.","type":"hamburger"},{"id":"5","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa suiza con champiñones","price":"28000","description":"Una hamburguesa de ternera con champiñones salteados y queso suizo.","type":"hamburger"},{"id":"6","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa Mexicana","price":"30000","description":"Una hamburguesa con jalapeños, queso pepper jack y mayonesa picante.","type":"hamburger"},{"id":"7","img":"https://i.ibb.co/8XW7T2W/burger-doble-carne.webp","name":"Hamburguesa vegetariana","price":"25000","description":"Una hamburguesa vegetal con todos los ingredientes clásicos.","type":"hamburger"},{"id":"8","img":"https://i.ibb.co/FwXM0xp/nachos.webp","name":"Nachos","price":"14000","description":"Chips de tortilla cubiertos con queso fundido, jalapeños y salsa.","type":"nachos"},{"id":"9","img":"https://i.ibb.co/FwXM0xp/nachos.webp","name":"Nachos cargados","price":"18000","description":"Nachos con queso, guacamole, crema agria y carne a elegir.","type":"nachos"},{"id":"10","img":"https://i.ibb.co/FwXM0xp/nachos.webp","name":"Nachos con pollo","price":"18000","description":"Nachos con pollo búfalo, queso y aderezo ranchero.","type":"nachos"},{"id":"11","img":"https://i.ibb.co/5kR53Qk/wraps.webp","name":"Wrap de pollo","price":"15000","description":"Un wrap relleno de pollo a la parrilla, lechuga y aderezo ranchero.","type":"wraps"},{"id":"12","img":"https://i.ibb.co/5kR53Qk/wraps.webp","name":"Wrap Caesar","price":"17000","description":"Un wrap con lechuga romana, aderezo César y la proteína de su elección.","type":"wraps"},{"id":"13","img":"https://i.ibb.co/5kR53Qk/wraps.webp","name":"Wrap con pollo buffalo","price":"19000","description":"Un wrap con pollo buffalo, lechuga y aderezo de queso azul.","type":"wraps"},{"id":"14","img":"https://i.ibb.co/5kR53Qk/wraps.webp","name":"Wrap vegetariano","price":"15000","description":"Un wrap relleno de verduras frescas y hummus.","type":"wraps"},{"id":"15","img":"https://i.ibb.co/QXS5bb3/milkshakes.webp","name":"Malteada de chocolate","price":"14000","description":"Una cremosa malteada hecha con helado de chocolate y coronada con crema chantilly.","type":"milkshakes"},{"id":"16","img":"https://i.ibb.co/QXS5bb3/milkshakes.webp","name":"Malteada de vainilla","price":"14000","description":"Malteada clasica hecha con helado de vainilla.","type":"milkshakes"},{"id":"17","img":"https://i.ibb.co/QXS5bb3/milkshakes.webp","name":"Malteada de fresa","price":"14000","description":"Malteada hecha con fresas frescas y helado de vainilla","type":"milkshakes"},{"id":"18","img":"https://i.ibb.co/QXS5bb3/milkshakes.webp","name":"Malteada de oreo","price":"16000","description":"Malteada con trozos de oreo, helado de vainilla y crema chatilly.","type":"milkshakes"},{"id":"19","img":"https://i.ibb.co/LSKZswS/wings.webp","name":"Buffalo Wings","price":"13000","description":"Alitas de pollo bañadas en salsa búfalo picante.","type":"wings"},{"id":"20","img":"https://i.ibb.co/LSKZswS/wings.webp","name":"Alitas BBQ","price":"15000","description":"Alitas bañadas en salsa BBQ y asadas a la perfección.","type":"wings"}]');
 ;// ./src/js/services/menuServices.js
 // * Se importa el archivo JSON (local) que contiene el menu a mostrar
 
@@ -331,9 +331,8 @@ class ProductList {
     this.containerId = document.getElementById(containerId);
     this.productsList = [];
 
-    this.setupEventListener()
     this.init(type);
-    
+    this.setupEventListener()
   }
 
   init(type) {
@@ -557,6 +556,99 @@ class CartData{
         }
     }
 }
+;// ./src/js/components/MenuCategory/MenuCategoryCard.js
+/**
+ * 
+ * @param {object} product // Funcion que recibe un objeto para renderizar un card de tipo de menu para mostrar en el DOM
+ * @returns 
+ */
+const MenuCategoryCard = (product) => {
+  return `
+    <div id="type${product.type}" class="flex flex-col bg-orange shadow-md shadow-black rounded-3xl md:rounded-none md:rounded-es-3xl md:rounded-ee-3xl p-3">
+        <img src="${product.img}" alt="${product.name}">
+        <p class="uppercase text-white font-semibold">${product.type}</p>
+    </div>
+    `;
+};
+
+;// ./src/js/components/MenuCategory/MenuCategoryList.js
+ // Se importa el archivo JSON (local) que contiene el menu a mostrar
+ // Import de la funcion MenuCategoryCard para renderizar las cards del menu
+ // Import de la clase ProductList para el uso de la clase y renderizar los productos filtrados
+
+class MenuCategoryList {
+    constructor(containerId, continerFilterId){
+        this.containerId = document.getElementById(containerId)
+        this.continerFilterId = document.getElementById(continerFilterId)
+        this.menuTypeList = []
+
+
+        this.init()
+        this.ProductList = new ProductList(continerFilterId)
+        this.setupEventListener()
+
+    }
+
+    init(){
+        try {
+            this.menuTypeList = this.getTypeArray(menu_namespaceObject)
+            this.render()
+        } catch (error) {
+            console.error("Error al cargar el menu filtrado: ", error);
+            this.containerId.innerHTML = "Error al cargar el menu..."
+        }
+    }
+
+    /**
+     * 
+     * @param {Array} menuData // Se ingresa el array de objetos correspondiente al menu principal
+     * @returns {Array} // Retorna el array transformado filtrando los primeros objetos por type
+     */
+    getTypeArray(menuData){
+        // Se crea un objeto para guardar temporalmente el primer item por type
+        const categoryMap = {}
+
+        // Se itera por cada elemento del menuData
+        menuData.forEach((element) => {
+            // Si aun no existe el item por type, se almacena, de lo contrario se descarta
+            if (!categoryMap[element.type]) {
+                categoryMap[element.type] = {
+                    img: element.img,
+                    name: element.name,
+                    type: element.type
+                }
+            }
+        });
+
+        // Se convierte el objeto creado anteriormente de forma temporal en un array
+        return Object.values(categoryMap)
+    }
+
+
+
+    /**
+     * Metodo para filtrar el menu mostrado por medio de la clase ProductList
+     * Usando el target de los botones del contenedor donde se renderiza el menu
+     */
+    setupEventListener (){
+        this.containerId.addEventListener("click", (e)=>{
+            const button = e.target.closest('[id^="type"]');
+
+            if (button) {
+                const productId = button.id.replace("type", "")
+                
+                this.ProductList.init(productId)
+
+            }
+        })
+    }
+
+    render(){
+        this.containerId.innerHTML = this.menuTypeList
+        .map((product)=> MenuCategoryCard(product))
+        .join("")
+    }
+}
 ;// ./src/js/script.js
 // * Import del CSS para el reconocimiento de WebPack
 
@@ -582,12 +674,20 @@ class CartData{
 
 // component para la muestra de los datos en cantidad de items del carrito y muestra del subtotal del carrito
 
+// component para la muestra del menu y sus filtros
+
+
+
+
 
 /**
  * * Se usa DOMContentLoaded sobre todo el documento para evitar problemas en sobre la interaccion del JS con el HTML,
  * * ya que, se espera a que cargue completamente el HTML para poder ejecutar el JS
  */
 document.addEventListener('DOMContentLoaded', () => {
+
+    // constante para conocer la localizacion de la pagina actual 
+    const currentPage = document.body.dataset.page;
     
     // Se ejecuta la funion initShoppingCart() para inicializar el carrito de compras en el locaStorage
     initShoppingCart()
@@ -598,12 +698,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Se instancia un nuevo objeto de tipo ShoppingCart() para usar su clase y metodos
     const shoppingCart = new ShoppingCart()
 
-    /**
-     * Se intancia un nuevo objeto de tipo ProductList para mostrar
-     * aquellos items del menu.json que correspondan a hamburguesas
-     * y se renderizan sobre el contenedor 'productsContainer'
-     */  
-    const productList = new ProductList('productsContainer', 'hamburger')
+    // /**
+    //  * Condicional para validar la pagina actual y asi ejecutar funciones especificas
+    //  */
+    if (currentPage === 'index') {
+        /**
+        * Se intancia un nuevo objeto de tipo ProductList para mostrar
+        * aquellos items del menu.json que correspondan a hamburguesas
+        * y se renderizan sobre el contenedor 'productsContainer'
+        */  
+        const productList = new ProductList('productsContainer', 'hamburger')
+    }else if(currentPage === 'menu'){
+        // const productList = new ProductList('productsContainer')
+        /**
+        * 
+        */
+        const menuCategoryList = new MenuCategoryList("containerMenuFilter", "containerMenuFilterProducts")
+    }
+
+    
+    
 
 
     /**
@@ -625,7 +739,6 @@ document.addEventListener('DOMContentLoaded', () => {
      * parametro2 = id de etiqueta para mostrar subtotal
      */
     const cartData = new CartData('amountCart', 'cartSubTotal')
-
 })
 /******/ })()
 ;

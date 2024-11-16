@@ -22,12 +22,20 @@ import { ProductList } from "./components/Products/ProductList"
 import { CartList } from "./components/ShoppingCart/CartList"
 // component para la muestra de los datos en cantidad de items del carrito y muestra del subtotal del carrito
 import { CartData } from "./components/ShoppingCart/CartData"
+// component para la muestra del menu y sus filtros
+import { MenuCategoryList } from "./components/MenuCategory/MenuCategoryList"
+
+
+
 
 /**
  * * Se usa DOMContentLoaded sobre todo el documento para evitar problemas en sobre la interaccion del JS con el HTML,
  * * ya que, se espera a que cargue completamente el HTML para poder ejecutar el JS
  */
 document.addEventListener('DOMContentLoaded', () => {
+
+    // constante para conocer la localizacion de la pagina actual 
+    const currentPage = document.body.dataset.page;
     
     // Se ejecuta la funion initShoppingCart() para inicializar el carrito de compras en el locaStorage
     initShoppingCart()
@@ -38,12 +46,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Se instancia un nuevo objeto de tipo ShoppingCart() para usar su clase y metodos
     const shoppingCart = new ShoppingCart()
 
-    /**
-     * Se intancia un nuevo objeto de tipo ProductList para mostrar
-     * aquellos items del menu.json que correspondan a hamburguesas
-     * y se renderizan sobre el contenedor 'productsContainer'
-     */  
-    const productList = new ProductList('productsContainer', 'hamburger')
+    // /**
+    //  * Condicional para validar la pagina actual y asi ejecutar funciones especificas
+    //  */
+    if (currentPage === 'index') {
+        /**
+        * Se intancia un nuevo objeto de tipo ProductList para mostrar
+        * aquellos items del menu.json que correspondan a hamburguesas
+        * y se renderizan sobre el contenedor 'productsContainer'
+        */  
+        const productList = new ProductList('productsContainer', 'hamburger')
+    }else if(currentPage === 'menu'){
+        // const productList = new ProductList('productsContainer')
+        /**
+        * 
+        */
+        const menuCategoryList = new MenuCategoryList("containerMenuFilter", "containerMenuFilterProducts")
+    }
+
+    
+    
 
 
     /**
@@ -65,5 +87,4 @@ document.addEventListener('DOMContentLoaded', () => {
      * parametro2 = id de etiqueta para mostrar subtotal
      */
     const cartData = new CartData('amountCart', 'cartSubTotal')
-
 })

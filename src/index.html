@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- link to animate on scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Yeli Burger - Home</title>
   </head>
-  <body>
+  <body data-page="index">
     <div class="font-montserrat flex flex-col min-h-screen">
       <header class="sticky top-0 w-full max-h-[105px] py-4 bg-white border-b-4 border-b-red z-40">
         <nav class="flex justify-between flex-1 items-center m-auto w-11/12 lg:w-10/12 2xl:w-8/12">
@@ -63,8 +65,8 @@
       <main class="flex-1 h-full">
         <section class="relative h-screen w-full overflow-hidden">
           <img class="absolute inset-0 object-cover w-full h-full" src="./assets/hamburger-banner.webp" alt="Hamburger banner home">
-          <div class="absolute inset-0 m-auto flex flex-col justify-center items-center text-center xl:items-start xl:text-start w-11/12 lg:w-10/12 2xl:w-8/12 gap-9">
-            <h1 class="text-5xl xl:text-8xl text-white font-extrabold">CARNE DE RES <strong class="text-orange">100%</strong> ARTESANAL</h1>
+          <div data-aos="fade-right" data-aos-duration="1500" class="absolute inset-0 m-auto flex flex-col justify-center items-center text-center xl:items-start xl:text-start w-11/12 lg:w-10/12 2xl:w-8/12 gap-9">
+            <h1 class="animate__backInDown text-5xl xl:text-8xl text-white font-extrabold">CARNE DE RES <strong class="text-orange">100%</strong> ARTESANAL</h1>
             <p class="text-white font-medium">El pan más sabroso, los ingredientes más frescos y nuestra carne artesanal jugosa son la combinación ideal para cualquier hora del día.</p>
             <div class="flex gap-6">
               <button class="py-4 px-6 font-semibold bg-red rounded-xl transform duration-300 hover:bg-black text-white text-base ">ORDENAR AHORA</button>
@@ -85,8 +87,8 @@
           <div class="flex flex-col items-center text-center mx-auto h-full w-11/12 lg:w-10/12 2xl:w-8/12">
             <h3 class="text-white text-4xl lg:text-6xl font-extrabold">PRUEBA NUESTRAS DELICIOSAS HAMBURGUESAS</h3>
             <div class="flex justify-center items-center relative">
-              <img class="mx-a mt-16 lg:mt-16 " src="https://i.ibb.co/Wsfm2Hk/banner-view-menu.webp" alt="Banner view all menu">
-              <a class="absolute top-1/2" href="./pages/menu.html"><button class=" py-4 px-10 font-semibold bg-black rounded-xl transform duration-300 hover:bg-white hover:text-black text-white text-base ">VER MENU</button></a>
+              <img data-aos="zoom-in-down" data-aos-duration="1000" class="mx-a mt-16 lg:mt-16 " src="https://i.ibb.co/Wsfm2Hk/banner-view-menu.webp" alt="Banner view all menu">
+              <a data-aos="zoom-out" data-aos-duration="1500" class="absolute top-1/2" href="./pages/menu.html"><button class=" py-4 px-10 font-semibold bg-black rounded-xl transform duration-300 hover:bg-white hover:text-black text-white text-base ">VER MENU</button></a>
             </div>
           </div>
           
@@ -143,6 +145,9 @@
     </div>
     <!-- srcip para icons -->
     <script src="https://kit.fontawesome.com/3e852469a1.js" crossorigin="anonymous"></script>
+    <!-- script to animation on scroll -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
     <!-- No se esta usando la etiqueta script para enlazar el javascript, ya que se esta usando webpack y este lo enlaza automaticamente en el index de la carpeta build -->
   </body>
 </html>

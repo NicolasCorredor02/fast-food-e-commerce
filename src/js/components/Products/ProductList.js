@@ -12,9 +12,8 @@ export class ProductList {
     this.containerId = document.getElementById(containerId);
     this.productsList = [];
 
-    this.setupEventListener()
     this.init(type);
-    
+    this.setupEventListener()
   }
 
   init(type) {

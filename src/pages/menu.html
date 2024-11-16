@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yeli Burger - Home</title>
+    <!-- link to animate on scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Yeli Burger - Menu</title>
   </head>
-  <body>
+  <body data-page="menu">
     <div class="font-montserrat flex flex-col min-h-screen">
       <header class="sticky top-0 w-full max-h-[105px] py-4 bg-white border-b-4 border-b-red z-40">
         <nav class="flex justify-between flex-1 items-center m-auto w-11/12 lg:w-10/12 2xl:w-8/12">
@@ -61,18 +63,17 @@
         </nav>
       </header>
       <main class="flex-1 h-full">
-        <section class="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
+        <section class="relative h-[100vh] md:h-[60vh] w-full overflow-hidden">
             <img class="absolute inset-0 object-cover w-full h-full" src="../assets/banner-menu.webp" alt="Hamburger banner menu">
             <div class="absolute inset-0 m-auto flex justify-center items-center text-center w-11/12 lg:w-10/12 2xl:w-8/12 gap-9">
               <h1 class="text-5xl xl:text-8xl text-white font-extrabold">Menu</h1>
             </div>
           </section>
-        <section class="flex h-full flex-col gap-12 py-14 items-center text-center mx-auto w-11/12 lg:w-10/12 2xl:w-8/12">
-          <div class="flex flex-col gap-12">
-            <h2 class="text-3xl font-extrabold text-black">Hamburguesas populares</h2>
-            <p class="text-black font-medium">Inspirado en las recetas y creaciones de los mejores chefs del mundo</p>
+        <section class="flex h-full flex-col gap-12 py-14 md:py-0 md:pb-14 items-center text-center mx-auto w-11/12 lg:w-10/12 2xl:w-8/12">
+          <div id="containerMenuFilter" class="w-full md:px-16 grid grid-cols-2 md:grid-cols-auto-fit-category gap-5">
+            
           </div>
-          <div id="productsContainer" class="w-full h-full grid grid-cols-auto-fit-populars auto-rows-auto gap-7">
+          <div id="containerMenuFilterProducts" class="w-full h-full grid grid-cols-auto-fit-populars auto-rows-auto gap-7">
             <!-- SE GENERA CON JS -->
           </div>
         </section>
@@ -128,6 +129,9 @@
     </div>
     <!-- srcip para icons -->
     <script src="https://kit.fontawesome.com/3e852469a1.js" crossorigin="anonymous"></script>
+    <!-- script to animation on scroll -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
     <!-- No se esta usando la etiqueta script para enlazar el javascript, ya que se esta usando webpack y este lo enlaza automaticamente en el index de la carpeta build -->
   </body>
 </html>
