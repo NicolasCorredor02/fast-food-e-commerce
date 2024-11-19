@@ -70,6 +70,20 @@ module.exports = {
         useShortDoctype: true
       }
     }),
+    // Puglin HTML pages/user-register.html
+    new HtmlWebpackPlugin({
+      template: "./src/pages/user-register.html",
+      filename: "pages/user-register.html",
+      minify: {
+        collapseWhitespace: true,
+        keepClosingSlash: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      }
+    }),
     // Plugin CSS
     new MiniCssExtractPlugin({
         filename: 'bundle.css'

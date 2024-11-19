@@ -833,6 +833,10 @@ video {
   gap: 2.25rem;
 }
 
+.gap-4{
+  gap: 1rem;
+}
+
 .gap-y-10{
   row-gap: 2.5rem;
 }
@@ -1272,6 +1276,10 @@ video {
 
   .md\:items-start{
     align-items: flex-start;
+  }
+
+  .md\:gap-9{
+    gap: 2.25rem;
   }
 
   .md\:rounded-lg{
