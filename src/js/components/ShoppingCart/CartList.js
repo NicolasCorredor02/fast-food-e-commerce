@@ -11,11 +11,11 @@ export class CartList{
         this.cartButtonContinue = document.getElementById(cartButtonContinue)
         this.cartList = []
 
+        this.init()
         this.setupEventRemoveCart()
         this.setupEventReduceAmount()
         this.setupEventSumAmount()
         this.setupEventClearCart()
-        this.init()
     }
 
 
@@ -41,7 +41,7 @@ export class CartList{
                 const productId = button.id.replace("remover", "")
                 removeFromShoppingCart(productId)
 
-                location.reload()
+                this.init()
             }
         })
     }
@@ -57,7 +57,7 @@ export class CartList{
                 const productId = button.id.replace("disminuir", "")
                 reduceAmountCart(productId)
 
-                location.reload()
+                this.init()
             }
         })
     }
@@ -74,7 +74,7 @@ export class CartList{
                 
                 sumAmountCart(productId)
 
-                location.reload()
+                this.init()
             }
         })
     }
@@ -86,7 +86,8 @@ export class CartList{
     setupEventClearCart(){
         this.cartButtonContinue.addEventListener("click", () =>{
             clearShoppingCart()
-            location.reload()
+
+            this.init()
         })
     }
 

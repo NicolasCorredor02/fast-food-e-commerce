@@ -64,10 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const menuCategoryList = new MenuCategoryList("containerMenuFilter", "containerMenuFilterProducts")
     }
 
-    
-    
-
-
     /**
      * Se intancia un nuevo objeto de tipo CartList para mostrar
      * aquellos items que han sido agregados al carrito de compras del localStorage
@@ -75,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * 
      * El primer parametro corresponde al contenedor donde se renderizan los items del carrito
      * El segundo parametro corresponde al boton que simula la continuacion del la compra
-     */  
+     */
     const cartList = new CartList('cartContainerList', 'cartButtonContinue')
 
     /**
@@ -85,6 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
      * 
      * parametro1 =  id de etiqueta para mostrar conteo
      * parametro2 = id de etiqueta para mostrar subtotal
+     * 
+     * Se deja en una funcion interval para que se este actualizando continuamente
      */
-    const cartData = new CartData('amountCart', 'cartSubTotal')
+    setInterval(() => {
+        const cartData = new CartData('amountCart', 'cartSubTotal') 
+    }, 1000);
+    
 })
