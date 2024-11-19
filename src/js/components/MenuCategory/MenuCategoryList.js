@@ -64,7 +64,6 @@ export class MenuCategoryList {
                 const productId = button.id.replace("type", "")
                 
                 this.ProductList.init(productId)
-
             }
         })
     }

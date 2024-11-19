@@ -1,3 +1,5 @@
+import { CartList } from "../components/ShoppingCart/CartList"
+
 export class ShoppingCart{
     
     /**
@@ -7,6 +9,7 @@ export class ShoppingCart{
         this.cartOverlay = document.getElementById("cartOverlay")
         this.cartOpen = document.getElementById("cartOpen")
         this.cartClose = document.getElementById("cartClose")
+
 
         this.init()
     }

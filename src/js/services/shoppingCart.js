@@ -2,6 +2,8 @@
 import { SHOPPING_CART } from '../constants/config'
 import { SHOPPING_CART_KEY } from '../constants/config'
 
+import { addItem } from '../components/alerts/cart/alertsCart' // Import function for alert form cart
+
 /**
  * Funcion para inicializar el carrito de compras en caso de que no se encuentre creado
  */
@@ -48,10 +50,14 @@ export const addToShoppingCart = (object) =>{
        const index = currentCart.findIndex((element) => element.id === object.id)
        currentCart[index].amount++
        localStorage.setItem(SHOPPING_CART_KEY, JSON.stringify(currentCart))
+    
+        addItem('success')
     } else {
         object.amount = 1
         currentCart.push(object)
         localStorage.setItem(SHOPPING_CART_KEY, JSON.stringify(currentCart))
+
+        addItem('success')
     }
 }
 
@@ -72,6 +78,8 @@ export const sumAmountCart = (id) => {
        const index = currentCart.findIndex((element) => element.id === id)
        currentCart[index].amount++       
        localStorage.setItem(SHOPPING_CART_KEY, JSON.stringify(currentCart))
+
+       addItem('success')
     } else {
         console.log('Error al aumentar cantidad del elemento en el carrito!');
     }
@@ -94,6 +102,8 @@ export const reduceAmountCart = (id) =>{
        const index = currentCart.findIndex((element) => element.id === id)
        currentCart[index].amount--
        localStorage.setItem(SHOPPING_CART_KEY, JSON.stringify(currentCart))
+
+       addItem('remove')
     } else {
         console.log('Error al disminuir cantidad del elemento en el carrito!');
     }
@@ -107,6 +117,8 @@ export const removeFromShoppingCart = (idItem) => {
     const currentCart = getShoppingCart()
     const updateCart = currentCart.filter((object) => object.id !== idItem)
     localStorage.setItem(SHOPPING_CART_KEY, JSON.stringify(updateCart))
+
+    addItem('remove')
 }
 
 
@@ -129,4 +141,6 @@ export const cartSubTotal = (shoppingCart) => shoppingCart.reduce((accumulador, 
  */
 export const clearShoppingCart = () => {
     localStorage.setItem(SHOPPING_CART_KEY, JSON.stringify([]))
+
+    addItem('finish')
 }
