@@ -1,13 +1,15 @@
-// * Se importa el archivo JSON (local) que contiene el menu a mostrar
-import menuData from '../constants/menu.json' assert {type: 'json'}
+import { getData } from "./dataServices" // Se importa la funcion "getData()" para obtener la informacion del JSON local
 
 /**
  * 
  * @param {string} tipo // Se recibe el tipo del elemento que se quiere buscar, por default tiene todo seleccionado
  * @returns // regresa un array con los objetos encontrados
  */
-export const getMenuByType = (tipo = 'all') =>{
+export const getMenuByType = async (tipo = 'all') =>{ 
     try {
+
+        const menuData = await getData()
+        
         if (tipo != 'all') {
             const elementFilter = menuData.filter((obj) => obj.type.toLowerCase() === tipo.toLowerCase())
 
@@ -27,8 +29,11 @@ export const getMenuByType = (tipo = 'all') =>{
  * @param {string} id // Se recibe el id del elemento que se quiere encontrar sobre el menu 
  * @returns // Regresa el objeto del id buscado
  */
-export const getItemById = (id) =>{    
+export const getItemById = async (id) =>{    
     try {    
+
+        const menuData = await getData()
+
         const element =  menuData.find((obj) => obj.id === id)      
         return element
     } catch (error) {

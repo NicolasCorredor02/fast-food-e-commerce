@@ -9,21 +9,35 @@ import "../assets/banner-menu.webp"
 // Service para inicializar el carrito de compras
 import { initShoppingCart } from "./services/shoppingCart"
 
+// Services para inicializar la data del usuario
+import { initUserData } from "./services/userServices"
+import { initUserSession } from "./services/userServices"
+
 // * ============= Import de utils ==============
 // Util para interaccion con navbar principal
 import { NavbarMenu } from "./utils/navbarShow"
+
 // Util para interaccion con el carrito de compras
 import {ShoppingCart} from "./utils/shoppingCart"
+
+// Util para el formulario de registro
+import { RegisterForm } from "./utils/registerForm"
 
 //* =============== Import de components ============
 // component para la muestra del menu de alimentos
 import { ProductList } from "./components/Products/ProductList"
+
 // component para la muestra del carrito de compras y sus funcionalidades
 import { CartList } from "./components/ShoppingCart/CartList"
+
 // component para la muestra de los datos en cantidad de items del carrito y muestra del subtotal del carrito
 import { CartData } from "./components/ShoppingCart/CartData"
+
 // component para la muestra del menu y sus filtros
 import { MenuCategoryList } from "./components/MenuCategory/MenuCategoryList"
+
+// component para la muestra del nombre de usuario al registrarse
+import { UserState } from "./components/UserState/UserState"
 
 
 
@@ -37,6 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // constante para conocer la localizacion de la pagina actual 
     const currentPage = document.body.dataset.page;
     
+    // Se ejecutan las funciones initUserData() y initUserSession() para inicializar la data del usuario
+    initUserData()
+    initUserSession()
+
     // Se ejecuta la funion initShoppingCart() para inicializar el carrito de compras en el locaStorage
     initShoppingCart()
 
@@ -46,9 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Se instancia un nuevo objeto de tipo ShoppingCart() para usar su clase y metodos
     const shoppingCart = new ShoppingCart()
 
-    // /**
-    //  * Condicional para validar la pagina actual y asi ejecutar funciones especificas
-    //  */
+    /**
+     * Condicional para validar la pagina actual y asi ejecutar funciones especificas
+     */
     if (currentPage === 'index') {
         /**
         * Se intancia un nuevo objeto de tipo ProductList para mostrar
@@ -57,11 +75,17 @@ document.addEventListener('DOMContentLoaded', () => {
         */  
         const productList = new ProductList('productsContainer', 'hamburger')
     }else if(currentPage === 'menu'){
-        // const productList = new ProductList('productsContainer')
         /**
-        * 
+        * Se instancia un nuevo objeto de tipo MenuCategoryList para
+        * mostrar las categorias a filtrar y sus respectivos items
         */
         const menuCategoryList = new MenuCategoryList("containerMenuFilter", "containerMenuFilterProducts")
+    }else if (currentPage === 'user-register'){
+        /**
+         *  Se instancia un nuevo objeto de tipo RegisterForm para
+         *  controlar el formulario de registro
+         */
+        const registerForm = new RegisterForm('register-form', 'first-name', 'last-name', 'email')
     }
 
     /**
@@ -73,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * El segundo parametro corresponde al boton que simula la continuacion del la compra
      */
     const cartList = new CartList('cartContainerList', 'cartButtonContinue')
+    cartList.init()
 
     /**
      * Se instancia nuevo obj de tipo de CartData
@@ -82,10 +107,16 @@ document.addEventListener('DOMContentLoaded', () => {
      * parametro1 =  id de etiqueta para mostrar conteo
      * parametro2 = id de etiqueta para mostrar subtotal
      * 
+     * ----------------------------------------------
+     * 
+     * Se instancia un obj de tipo UserState para
+     * mostrar el nombre del usuario
+     * 
      * Se deja en una funcion interval para que se este actualizando continuamente
      */
     setInterval(() => {
         const cartData = new CartData('amountCart', 'cartSubTotal') 
+        const userState =  new UserState('view-name-user')
     }, 1000);
     
 })

@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 //CSS
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { type } = require("os")
 
 module.exports = {
 
@@ -34,7 +35,19 @@ module.exports = {
           },
         ],
       },
+      {
+       test: /\.json$/,
+       type: 'json', 
+      },
     ],
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'src'),
+    },
+    compress: true,
+    port: 8080,
+    hot: true
   },
   optimization: {
     minimizer: [
@@ -91,6 +104,7 @@ module.exports = {
   ],
   output: {
     path: path.join(basePath, disPath),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: "/"
   }
 };

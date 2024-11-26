@@ -1,5 +1,3 @@
-import { CartList } from "../components/ShoppingCart/CartList"
-
 export class ShoppingCart{
     
     /**
