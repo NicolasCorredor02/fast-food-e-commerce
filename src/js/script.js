@@ -4,6 +4,7 @@ import "../css/styles.css"
 // * Import de los assets para el proyecto
 import "../assets/hamburger-banner.webp"
 import "../assets/banner-menu.webp"
+import "../assets/banner-register.webp"
 
 // * ============== Import de Services =========
 // Service para inicializar el carrito de compras

@@ -10,6 +10,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { type } = require("os")
 
+//Plugin for copy data JSON
+const CopyPlugin = require("copy-webpack-plugin");
+
 module.exports = {
 
   //entry point
@@ -100,6 +103,16 @@ module.exports = {
     // Plugin CSS
     new MiniCssExtractPlugin({
         filename: 'bundle.css'
+    }),
+
+    // Plugin copy JSON data
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/js/constants/menu.json',
+          to: 'js/constants/menu.json'
+        }
+      ]
     })
   ],
   output: {
