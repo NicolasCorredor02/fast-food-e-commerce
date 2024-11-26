@@ -13,7 +13,8 @@ module.exports = {
         'orange': 'rgb(255, 138, 0)',
         'grey': 'rgb(118, 118, 118)',
         'grey-dark': 'rgb(183,183,183)',
-        'dark-black': 'rgb(0,0,0)'
+        'dark-black': 'rgb(0,0,0)', 
+        'beige': 'rgb(245, 245, 245)'
       },
       backgroundImage:{
         'banner-home': "url('/src/assets/hamburger-banner.webp')",

@@ -1,4 +1,4 @@
-import menuData from '../../constants/menu.json' assert {type: 'json'} // Se importa el archivo JSON (local) que contiene el menu a mostrar
+import { getData } from '../../services/dataServices' // Se importa la funcion "getData()" para obtener la informacion del JSON local
 import { MenuCategoryCard } from './MenuCategoryCard' // Import de la funcion MenuCategoryCard para renderizar las cards del menu
 import { ProductList } from '../Products/ProductList' // Import de la clase ProductList para el uso de la clase y renderizar los productos filtrados
 
@@ -15,8 +15,9 @@ export class MenuCategoryList {
 
     }
 
-    init(){
+   async init(){
         try {
+            const menuData = await getData()
             this.menuTypeList = this.getTypeArray(menuData)
             this.render()
         } catch (error) {

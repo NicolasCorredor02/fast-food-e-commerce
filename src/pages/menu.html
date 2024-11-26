@@ -18,23 +18,26 @@
           </div>
           <div id="navbarMenu" class="absolute top-0 left-0 lg:static min-w-72 md:w-80 lg:w-auto bg-white min-h-screen lg:min-h-full lg:block transform -translate-x-full transition-transform duration-300 ease-in-out lg:transform-none z-40">
             <div class="flex justify-between items-center py-7 pl-3.5 lg:hidden">
-              <a href=""><img src="https://i.ibb.co/R7QYWb8/logo-yeli-burger.webp" alt="logo-yeli-burger"></a>
+              <a href="../index.html"><img src="https://i.ibb.co/R7QYWb8/logo-yeli-burger.webp" alt="logo-yeli-burger"></a>
               <button class="pr-3.5" id="navbarCloseMenu">
                 <i class="fa-solid fa-xmark text-3xl"></i>
               </button>
             </div>
             <ul class="pt-3.5 px-3.5 w-auto lg:flex lg:pt-0 lg:px-0 lg:flex-1">
               <li class="py-3.5 px-3.5"><a class="font-semibold transform duration-300 hover:text-red" href="./menu.html">MENU</a></li>
-              <li class="py-3.5 px-3.5"><a class="font-semibold transform duration-300 hover:text-red" href="#">NUESTROS SERVICIOS</a></li>
               <li class="py-3.5 px-3.5"><a class="font-semibold transform duration-300 hover:text-red" href="#">SOBRE NOSOTROS</a></li>
-              <li class="lg:hidden"><button class="mt-7 py-6 px-10 font-semibold bg-red rounded-xl transform duration-300 hover:bg-black text-white  ">ORDERNAR AHORA</button></li>
+              <li class="lg:hidden"><a href="./menu.html"><button class="mt-7 py-6 px-10 font-semibold bg-red rounded-xl transform duration-300 hover:bg-black text-white  ">ORDERNAR AHORA</button></a></li>
             </ul>
           </div>
-          <div class="flex gap-9">
+          <div class="flex justify-center items-center gap-4 md:gap-9">
             <button class="relative h-[50px] w-[80px]" id="cartOpen">
               <i class="fa-solid fa-cart-shopping text-red text-2xl transform duration-300 hover:text-black"></i>
               <p id="amountCart" class="absolute rounded-full w-[22.5px] h-[22.5px] text-center p-[2px] top-0 right-0 bg-red text-white text-sm font-bold"></p>
             </button>
+            <a class="flex flex-col justify-center items-center" href="./user-register.html">
+              <i class="fa-solid fa-user text-red text-2xl transform duration-300 hover:text-black"></i>
+              <p id="view-name-user" class="text-xs"></p>
+            </a>
             <button class="lg:hidden" id="navbarOpenMenu">
               <i class="fa-solid fa-bars text-2xl"></i>
             </button>
@@ -136,6 +139,8 @@
     <script>AOS.init();</script>
     <!-- script to notyf library -->
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <!-- script to sweetAlert2 library -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- No se esta usando la etiqueta script para enlazar el javascript, ya que se esta usando webpack y este lo enlaza automaticamente en el index de la carpeta build -->
   </body>
 </html>
