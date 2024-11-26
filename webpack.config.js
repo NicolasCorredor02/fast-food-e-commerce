@@ -106,14 +106,14 @@ module.exports = {
     }),
 
     // Plugin copy JSON data
-    new CopyWebpackPlugin({
+    new CopyPlugin({
       patterns: [
         {
           from: 'src/js/constants/menu.json',
           to: 'js/constants/menu.json'
         }
       ]
-    })
+    }),
   ],
   output: {
     path: path.join(basePath, disPath),
